@@ -100,10 +100,10 @@ module.exports = async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Flowline Studio <hello@flowlinestudio.co.za>",
+        from: "Flowline Studio <enquiries@flowlinestudio.co.za>",
         to: ["hello@flowlinestudio.co.za"],
         reply_to: email,
-        subject: "New enquiry: " + enquiryType,
+        subject: "New website message: " + name,
         text,
       }),
     });

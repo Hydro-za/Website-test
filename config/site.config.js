@@ -6,9 +6,9 @@ module.exports = {
   business: {
     name: "Flowline Studio",
     legalName: "Flowline Studio",
-    industry: "Website design, custom business systems, motion graphics and video editing",
+    industry: "Website design, ecommerce websites and custom business systems",
     tagline: "Digital creativity that moves your business forward.",
-    shortDescription: "Flowline Studio helps businesses build a stronger digital presence with modern websites, custom business systems, motion graphics and video editing.",
+    shortDescription: "Flowline Studio helps businesses build a stronger digital presence with modern websites, ecommerce stores and custom business systems.",
     foundedYear: null,
     schemaType: "ProfessionalService",
     priceRange: null,
@@ -89,7 +89,7 @@ module.exports = {
   },
 
   footer: {
-    blurb: "Website design, custom business systems, motion graphics and video editing for businesses ready to work smarter and make a stronger impression.",
+    blurb: "Website design, ecommerce stores and custom business systems for businesses ready to grow online and work smarter.",
     columns: ["explore", "contact"],
     legal: "All rights reserved.",
     extraLinks: [],
@@ -97,7 +97,7 @@ module.exports = {
 
   form: {
     endpoint: "/api/contact",
-    enquiryTypes: ["Website design", "Custom business systems", "Motion graphics", "Video editing", "Multiple services", "General enquiry"],
+    enquiryTypes: ["Website design", "Ecommerce websites", "Custom business systems", "Multiple services", "General enquiry"],
     quoteType: "Website design",
     messages: {
       success: "Thank you. Your enquiry has been sent. We'll get back to you as soon as we can.",
@@ -136,28 +136,16 @@ module.exports = {
         image: { src: "assets/img/illustration-process.svg", alt: "Illustrated business workflow and connected system diagram" },
       },
       {
-        id: "motion-graphics",
-        icon: "bolt",
-        name: "Motion Graphics",
-        summary: "Eye-catching animated visuals that give your brand more energy and help your message stand out.",
-        description: "Bring ideas to life with motion-led visual content for brand communication, promotions and digital platforms. Each piece is shaped around the message, audience and intended use.",
-        benefits: ["Animated promotional content", "Logo and brand animation enquiries", "Visuals tailored to digital platforms"],
+        id: "ecommerce-websites",
+        icon: "shopping-cart",
+        name: "Ecommerce Websites",
+        summary: "Professional online stores that make it easy for customers to browse products and shop your business.",
+        description: "We create ecommerce websites with clear product layouts, simple navigation and a smooth shopping experience across mobile and desktop. Your store is structured around your products, customers and the way you want to sell online.",
+        benefits: ["Product pages and organised categories", "Mobile-friendly shopping experience", "Cart, checkout and essential store pages"],
         price: null,
-        cta: "Discuss motion graphics",
+        cta: "Discuss an online store",
         featured: true,
-        image: { src: "assets/img/illustration-motion.svg", alt: "Abstract motion graphics and animation curves" },
-      },
-      {
-        id: "video-editing",
-        icon: "doc",
-        name: "Video Editing",
-        summary: "Polished video content for business promotions, social media and brand storytelling.",
-        description: "Turn raw footage and creative ideas into clear, engaging edits. We can discuss pacing, structure, titles and finishing based on your footage and the platform where the video will be used.",
-        benefits: ["Promotional and business video edits", "Social media video formatting", "Titles, transitions and finishing"],
-        price: null,
-        cta: "Discuss video editing",
-        featured: true,
-        image: { src: "assets/img/illustration-video.svg", alt: "Illustrated video editing timeline and preview" },
+        image: { src: "assets/img/illustration-ecommerce.svg", alt: "Illustrated ecommerce storefront with product cards and shopping cart" },
       },
     ],
     pricing: {
@@ -171,16 +159,16 @@ module.exports = {
     home: {
       slug: "",
       seo: {
-        title: "Web Design & Custom Business Systems in Durban",
-        description: "Flowline Studio helps businesses in Durban and across South Africa with website design, custom business systems, motion graphics and video editing.",
-        keywords: ["web design Durban", "custom business systems South Africa", "business management software Durban", "motion graphics Durban", "video editing Durban"],
+        title: "Web Design, Ecommerce & Custom Business Systems in Durban",
+        description: "Flowline Studio helps businesses in Durban and across South Africa with website design, ecommerce websites and custom business systems.",
+        keywords: ["web design Durban", "ecommerce websites Durban", "online stores South Africa", "custom business systems South Africa", "business management software Durban"],
       },
       sections: [
         {
           type: "hero",
           eyebrow: "Creative digital studio · Durban, South Africa",
           headline: "Make your business impossible to overlook.",
-          text: "We create modern websites, motion graphics and video content that help small businesses show up with confidence and make a lasting impression.",
+          text: "We create modern business websites, online stores and custom systems that help businesses grow with confidence.",
           primaryCta: { label: "Start a project", page: "contact", query: "?enquiry=quote" },
           secondaryCta: { label: "Explore our services", page: "services" },
           highlights: ["Designed for small businesses", "Modern, mobile-first experiences", "Creative work with purpose"],
@@ -192,7 +180,7 @@ module.exports = {
           heading: "Creative thinking. Clear digital experiences.",
           paragraphs: [
             "Your online presence often gives customers their first impression of your business. It should feel considered, communicate what you do and make the next step easy.",
-            "Flowline Studio brings website design, custom business systems and creative production together to help businesses present their brand clearly and run their operations more efficiently.",
+            "Flowline Studio brings website design, ecommerce stores and custom business systems together to help businesses reach customers and run their operations more efficiently.",
           ],
           link: { label: "Get to know us", page: "about" },
           image: { src: "assets/img/illustration-brand-system.svg", alt: "Illustrated brand identity and design system", width: 1200, height: 900 },
@@ -201,7 +189,7 @@ module.exports = {
           type: "catalogue",
           eyebrow: "What we create",
           heading: "Digital services for growing businesses",
-          intro: "From your online presence to the systems behind your operations, we help your business work smarter and communicate better.",
+          intro: "From your business website and online store to the systems behind your operations, we help your business work smarter and grow online.",
           featuredOnly: true,
           link: { label: "View all services", page: "services" },
         },
@@ -213,7 +201,7 @@ module.exports = {
             { icon: "check", title: "Purpose-led design", text: "Every page and visual should have a clear job: explain your offer, build confidence or guide the next step." },
             { icon: "user", title: "Built around your business", text: "We start with your goals, audience and content instead of forcing your business into a generic layout." },
             { icon: "phone", title: "Made for modern screens", text: "Responsive layouts help your website and content work across phones, tablets and desktops." },
-            { icon: "bolt", title: "Consistent creative", text: "Bring your website and visual content together with a coherent, recognisable brand presence." },
+            { icon: "bolt", title: "Consistent creative", text: "Bring your website, online store and business tools together with a coherent, recognisable brand presence." },
           ],
         },
         {
@@ -230,7 +218,7 @@ module.exports = {
       slug: "about",
       seo: {
         title: "About Flowline Studio",
-        description: "Meet Flowline Studio, a Durban creative digital studio focused on website design, motion graphics and video editing for small businesses.",
+        description: "Meet Flowline Studio, a Durban digital studio focused on website design, ecommerce websites and custom business systems for small businesses.",
         keywords: ["Flowline Studio", "creative studio Durban", "web design studio South Africa"],
       },
       sections: [
@@ -239,9 +227,9 @@ module.exports = {
           type: "story",
           heading: "A studio focused on making your brand stand out.",
           paragraphs: [
-            "Flowline Studio is a Durban-based creative digital studio working across website design, motion graphics and video editing.",
+            "Flowline Studio is a Durban-based digital studio working across website design, ecommerce websites and custom business systems.",
             "Our focus is straightforward: understand what your business needs to communicate, then create digital experiences and visual content that help you communicate it clearly.",
-            "Whether you are building your first business website or need creative content to support your brand, the starting point is a conversation about your goals.",
+            "Whether you are building your first business website, launching an online store or improving internal operations, the starting point is a conversation about your goals.",
           ],
           image: { src: "assets/img/illustration-process.svg", alt: "Three-stage creative project workflow diagram", width: 1200, height: 900 },
         },
@@ -274,11 +262,11 @@ module.exports = {
       slug: "services",
       seo: {
         title: "Website Design, Custom Business Systems & Creative Services",
-        description: "Explore Flowline Studio's website design, custom business systems, motion graphics and video editing services in Durban and South Africa.",
-        keywords: ["business website design", "custom business systems", "business management software", "motion graphics services", "video editing services Durban"],
+        description: "Explore Flowline Studio's website design, ecommerce websites and custom business systems in Durban and South Africa.",
+        keywords: ["business website design", "ecommerce website design Durban", "online store development South Africa", "custom business systems", "business management software"],
       },
       sections: [
-        { type: "pageHeader", eyebrow: "Our services", heading: "Creative services that move your brand forward.", text: "Choose the support you need, or combine services to build a more consistent digital presence." },
+        { type: "pageHeader", eyebrow: "Our services", heading: "Digital services that move your business forward.", text: "Choose the support you need, or combine services to build a more consistent digital presence." },
         { type: "catalogueDetail" },
         {
           type: "process",
@@ -300,7 +288,7 @@ module.exports = {
           sample: false,
           items: [
             { q: "Do you work with small businesses?", a: "Yes. Flowline Studio's services are aimed at small businesses and entrepreneurs looking to improve their digital presence." },
-            { q: "Can I enquire about more than one service?", a: "Yes. You can tell us about a combined project involving website design, custom business systems, motion graphics and video editing." },
+            { q: "Can I enquire about more than one service?", a: "Yes. You can tell us about a combined project involving website design, ecommerce websites and custom business systems." },
             { q: "Do you provide quotes?", a: "Yes. Send us your project details and we can discuss the scope and an appropriate quote." },
             { q: "Where are you based?", a: "Flowline Studio is based in Durban, KwaZulu-Natal, South Africa. Enquiries can be made by email or phone." },
           ],
@@ -318,7 +306,7 @@ module.exports = {
       slug: "contact",
       seo: {
         title: "Contact Flowline Studio | Durban, South Africa",
-        description: "Get in touch with Flowline Studio in Durban for website design, motion graphics and video editing enquiries.",
+        description: "Get in touch with Flowline Studio in Durban for website design, ecommerce website and custom business system enquiries.",
         keywords: ["contact Flowline Studio", "web design quote Durban", "creative studio Durban"],
       },
       sections: [

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect width="640" height="520" fill="#e9e5da"/><g stroke="#16201c" stroke-opacity=".07" stroke-width="1"><path d="M0 0V520" /><path d="M40 0V520" /><path d="M80 0V520" /><path d="M120 0V520" /><path d="M160 0V520" /><path d="M200 0V520" /><path d="M240 0V520" /><path d="M280 0V520" /><path d="M320 0V520" /><path d="M360 0V520" /><path d="M400 0V520" /><path d="M440 0V520" /><path d="M480 0V520" /><path d="M520 0V520" /><path d="M560 0V520" /><path d="M600 0V520" /><path d="M0 0H640" /><path d="M0 40H640" /><path d="M0 80H640" /><path d="M0 120H640" /><path d="M0 160H640" /><path d="M0 200H640" /><path d="M0 240H640" /><path d="M0 280H640" /><path d="M0 320H640" /><path d="M0 360H640" /><path d="M0 400H640" /><path d="M0 440H640" /><path d="M0 480H640" /></g>
+<g stroke="#16201c" stroke-width="4">
+  <path d="M110 110H530V410H110Z" fill="#fdfcf9"/>
+  <path d="M110 250H300M360 250H530M320 110V190M320 250V410" stroke-width="3"/>
+  <path d="M300 250a60 60 0 0 1 60 0" stroke-width="1.5" stroke="#b8643a"/>
+  <path d="M210 110h60M440 410h60M110 330v50" stroke="#e9e5da" stroke-width="8"/>
+</g>
+<g font-family="monospace" font-size="14" fill="#16201c" fill-opacity=".55" stroke="none">
+  <text x="140" y="190">LIVING</text><text x="360" y="170">KITCHEN</text><text x="140" y="340">BEDROOM</text><text x="360" y="340">BATH</text>
+</g>
+<g transform="rotate(-38 520 440)"><rect x="440" y="432" width="170" height="16" fill="#b8643a"/><path d="M610 432l26 8-26 8z" fill="#16201c"/><rect x="440" y="432" width="26" height="16" fill="#16201c" opacity=".85"/></g>
+<g stroke="#b8643a" stroke-width="1.5"><path d="M110 450H530M110 444v12M530 444v12"/></g><text x="320" y="472" fill="#b8643a" font-family="monospace" font-size="13" text-anchor="middle" stroke="none">8.40 m</text>
+</svg>

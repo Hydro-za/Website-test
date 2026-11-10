@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect width="640" height="520" fill="#e9e5da"/><g stroke="#16201c" stroke-opacity=".07" stroke-width="1"><path d="M0 0V520" /><path d="M40 0V520" /><path d="M80 0V520" /><path d="M120 0V520" /><path d="M160 0V520" /><path d="M200 0V520" /><path d="M240 0V520" /><path d="M280 0V520" /><path d="M320 0V520" /><path d="M360 0V520" /><path d="M400 0V520" /><path d="M440 0V520" /><path d="M480 0V520" /><path d="M520 0V520" /><path d="M560 0V520" /><path d="M600 0V520" /><path d="M0 0H640" /><path d="M0 40H640" /><path d="M0 80H640" /><path d="M0 120H640" /><path d="M0 160H640" /><path d="M0 200H640" /><path d="M0 240H640" /><path d="M0 280H640" /><path d="M0 320H640" /><path d="M0 360H640" /><path d="M0 400H640" /><path d="M0 440H640" /><path d="M0 480H640" /></g>
+<g stroke="#16201c" stroke-width="4">
+  <path d="M120 440V250L260 170 400 250V440Z" fill="#fdfcf9"/><path d="M80 440H440"/>
+  <path d="M400 330L505 140 610 330Z" fill="#b8643a" stroke="#16201c"/>
+</g>
+<g stroke="#16201c" stroke-width="7"><path d="M505 205V265"/></g><circle cx="505" cy="298" r="6" fill="#16201c" stroke="none"/>
+<path d="M200 440v-90h60v90" stroke="#16201c" stroke-width="3" fill="#f4f2ec"/>
+</svg>

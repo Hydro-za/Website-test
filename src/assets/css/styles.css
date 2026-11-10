@@ -105,7 +105,7 @@ address { font-style: normal; }
 .hero__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
 .hero__text { font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--c-muted); max-width: 34rem; }
 .hero__media { position: relative; }
-.hero__media::before { content: ""; position: absolute; inset: 1.25rem -1.25rem -1.25rem 1.25rem; border: 2px solid var(--c-accent); border-radius: var(--radius); z-index: 0; }
+.hero__media::before { content: ""; position: absolute; inset: 0; border: 2px solid var(--c-accent); border-radius: var(--radius); z-index: 2; pointer-events: none; }
 .hero__media img { position: relative; z-index: 1; width: 100%; border-radius: var(--radius); background: var(--c-surface); }
 .ticks { display: grid; gap: .6rem; margin: 1.5rem 0 0; }
 .ticks li { display: flex; gap: .6rem; align-items: flex-start; color: var(--c-ink); }
@@ -114,8 +114,8 @@ address { font-style: normal; }
 @media (min-width: 560px) { .hero .ticks { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); } }
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__media { order: -1; margin-right: 1.25rem; }
-  .hero__media::before { inset: .9rem -.9rem -.9rem .9rem; }
+  .hero__media { order: -1; margin-right: 0; }
+  .hero__media::before { inset: 0; }
 }
 
 /* ---------- Page header (inner pages) ---------- */

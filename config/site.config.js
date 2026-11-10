@@ -6,9 +6,9 @@ module.exports = {
   business: {
     name: "Flowline Studio",
     legalName: "Flowline Studio",
-    industry: "Web design, motion graphics and video editing",
+    industry: "Website design, custom business systems, motion graphics and video editing",
     tagline: "Digital creativity that moves your business forward.",
-    shortDescription: "Flowline Studio helps small businesses build a stronger online presence through modern websites, motion graphics and video editing.",
+    shortDescription: "Flowline Studio helps businesses build a stronger digital presence with modern websites, custom business systems, motion graphics and video editing.",
     foundedYear: null,
     schemaType: "ProfessionalService",
     priceRange: null,
@@ -89,7 +89,7 @@ module.exports = {
   },
 
   footer: {
-    blurb: "Web design, motion graphics and video editing for businesses ready to make a stronger impression.",
+    blurb: "Website design, custom business systems, motion graphics and video editing for businesses ready to work smarter and make a stronger impression.",
     columns: ["explore", "contact"],
     legal: "All rights reserved.",
     extraLinks: [],
@@ -97,7 +97,7 @@ module.exports = {
 
   form: {
     endpoint: "/api/contact",
-    enquiryTypes: ["Website design", "Motion graphics", "Video editing", "Multiple services", "General enquiry"],
+    enquiryTypes: ["Website design", "Custom business systems", "Motion graphics", "Video editing", "Multiple services", "General enquiry"],
     quoteType: "Website design",
     messages: {
       success: "Thank you. Your enquiry has been sent. We'll get back to you as soon as we can.",
@@ -122,6 +122,18 @@ module.exports = {
         cta: "Discuss a website",
         featured: true,
         image: { src: "assets/img/illustration-website.svg", alt: "Illustrated website layout and interface diagram" },
+      },
+      {
+        id: "custom-business-systems",
+        icon: "wrench",
+        name: "Custom Business Systems",
+        summary: "Purpose-built software that helps businesses organise operations, manage work and simplify everyday processes.",
+        description: "We design and develop tailored business systems around the way your company works. From internal dashboards and job management platforms to quotation, invoicing and employee workflows, each system is planned around your real processes rather than forcing your business into generic software.",
+        benefits: ["Custom dashboards and business management tools", "Job, project, employee and task management", "Quotation, invoicing and workflow solutions"],
+        price: null,
+        cta: "Discuss a business system",
+        featured: true,
+        image: { src: "assets/img/illustration-process.svg", alt: "Illustrated business workflow and connected system diagram" },
       },
       {
         id: "motion-graphics",
@@ -159,9 +171,9 @@ module.exports = {
     home: {
       slug: "",
       seo: {
-        title: "Web Design, Motion Graphics & Video Editing in Durban",
-        description: "Flowline Studio helps small businesses in Durban and across South Africa stand out with modern website design, motion graphics and video editing.",
-        keywords: ["web design Durban", "website design South Africa", "motion graphics Durban", "video editing Durban", "small business websites"],
+        title: "Web Design & Custom Business Systems in Durban",
+        description: "Flowline Studio helps businesses in Durban and across South Africa with website design, custom business systems, motion graphics and video editing.",
+        keywords: ["web design Durban", "custom business systems South Africa", "business management software Durban", "motion graphics Durban", "video editing Durban"],
       },
       sections: [
         {
@@ -180,7 +192,7 @@ module.exports = {
           heading: "Creative thinking. Clear digital experiences.",
           paragraphs: [
             "Your online presence often gives customers their first impression of your business. It should feel considered, communicate what you do and make the next step easy.",
-            "Flowline Studio brings web design, motion graphics and video editing together to help small businesses present their brand with clarity and confidence.",
+            "Flowline Studio brings website design, custom business systems and creative production together to help businesses present their brand clearly and run their operations more efficiently.",
           ],
           link: { label: "Get to know us", page: "about" },
           image: { src: "assets/img/illustration-brand-system.svg", alt: "Illustrated brand identity and design system", width: 1200, height: 900 },
@@ -188,8 +200,8 @@ module.exports = {
         {
           type: "catalogue",
           eyebrow: "What we create",
-          heading: "Creative services for growing businesses",
-          intro: "Three ways to make your brand look sharper, communicate better and connect with customers.",
+          heading: "Digital services for growing businesses",
+          intro: "From your online presence to the systems behind your operations, we help your business work smarter and communicate better.",
           featuredOnly: true,
           link: { label: "View all services", page: "services" },
         },
@@ -261,9 +273,9 @@ module.exports = {
     services: {
       slug: "services",
       seo: {
-        title: "Website Design, Motion Graphics & Video Editing",
-        description: "Explore Flowline Studio's website design, motion graphics and video editing services for small businesses in Durban and South Africa.",
-        keywords: ["business website design", "motion graphics services", "video editing services Durban"],
+        title: "Website Design, Custom Business Systems & Creative Services",
+        description: "Explore Flowline Studio's website design, custom business systems, motion graphics and video editing services in Durban and South Africa.",
+        keywords: ["business website design", "custom business systems", "business management software", "motion graphics services", "video editing services Durban"],
       },
       sections: [
         { type: "pageHeader", eyebrow: "Our services", heading: "Creative services that move your brand forward.", text: "Choose the support you need, or combine services to build a more consistent digital presence." },
@@ -288,7 +300,7 @@ module.exports = {
           sample: false,
           items: [
             { q: "Do you work with small businesses?", a: "Yes. Flowline Studio's services are aimed at small businesses and entrepreneurs looking to improve their digital presence." },
-            { q: "Can I enquire about more than one service?", a: "Yes. You can tell us about a combined project involving website design, motion graphics and video editing." },
+            { q: "Can I enquire about more than one service?", a: "Yes. You can tell us about a combined project involving website design, custom business systems, motion graphics and video editing." },
             { q: "Do you provide quotes?", a: "Yes. Send us your project details and we can discuss the scope and an appropriate quote." },
             { q: "Where are you based?", a: "Flowline Studio is based in Durban, KwaZulu-Natal, South Africa. Enquiries can be made by email or phone." },
           ],

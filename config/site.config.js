@@ -121,7 +121,7 @@ module.exports = {
         price: null,
         cta: "Discuss a website",
         featured: true,
-        image: { src: "https://images.unsplash.com/photo-1460925895917-af0e3e9e3e9f?auto=format&fit=crop&w=1200&q=85", alt: "Modern website analytics and design workspace" },
+        image: { src: "assets/img/illustration-website.svg", alt: "Illustrated website layout and interface diagram" },
       },
       {
         id: "motion-graphics",
@@ -133,7 +133,7 @@ module.exports = {
         price: null,
         cta: "Discuss motion graphics",
         featured: true,
-        image: { src: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=85", alt: "Creative digital visual production with colourful screens" },
+        image: { src: "assets/img/illustration-motion.svg", alt: "Abstract motion graphics and animation curves" },
       },
       {
         id: "video-editing",
@@ -145,7 +145,7 @@ module.exports = {
         price: null,
         cta: "Discuss video editing",
         featured: true,
-        image: { src: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=85", alt: "Video editing timeline on a professional editing workstation" },
+        image: { src: "assets/img/illustration-video.svg", alt: "Illustrated video editing timeline and preview" },
       },
     ],
     pricing: {
@@ -172,7 +172,7 @@ module.exports = {
           primaryCta: { label: "Start a project", page: "contact", query: "?enquiry=quote" },
           secondaryCta: { label: "Explore our services", page: "services" },
           highlights: ["Designed for small businesses", "Modern, mobile-first experiences", "Creative work with purpose"],
-          image: { src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=85", alt: "Modern creative studio desk with a laptop displaying a website" , width: 1400, height: 1050 },
+          image: { src: "assets/img/illustration-hero.svg", alt: "Illustrated responsive website interface" , width: 1400, height: 1050 },
         },
         {
           type: "intro",
@@ -183,7 +183,7 @@ module.exports = {
             "Flowline Studio brings web design, motion graphics and video editing together to help small businesses present their brand with clarity and confidence.",
           ],
           link: { label: "Get to know us", page: "about" },
-          image: { src: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1200&q=85", alt: "Designer working on a clean digital website layout", width: 1200, height: 900 },
+          image: { src: "assets/img/illustration-brand-system.svg", alt: "Illustrated brand identity and design system", width: 1200, height: 900 },
         },
         {
           type: "catalogue",
@@ -231,7 +231,7 @@ module.exports = {
             "Our focus is straightforward: understand what your business needs to communicate, then create digital experiences and visual content that help you communicate it clearly.",
             "Whether you are building your first business website or need creative content to support your brand, the starting point is a conversation about your goals.",
           ],
-          image: { src: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85", alt: "Creative professionals collaborating around a table", width: 1200, height: 900 },
+          image: { src: "assets/img/illustration-process.svg", alt: "Three-stage creative project workflow diagram", width: 1200, height: 900 },
         },
         {
           type: "missionVision",

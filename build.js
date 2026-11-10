@@ -604,7 +604,12 @@ ${p.seo.keywords?.length ? `<meta name="keywords" content="${attr(p.seo.keywords
 <meta name="theme-color" content="${attr(C.theme.colors.primary)}">
 <link rel="canonical" href="${attr(canonical)}">
 <link rel="icon" href="${attr(prefixFor(key))}favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="${attr(prefixFor(key))}assets/img/apple-touch-icon.png">
+<link rel="alternate icon" href="${attr(prefixFor(key))}assets/img/apple-touch-icon.png" type="image/png">
+<link rel="apple-touch-icon" sizes="180x180" href="${attr(prefixFor(key))}assets/img/apple-touch-icon.png">
+<link rel="manifest" href="${attr(prefixFor(key))}site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="${attr(biz.name)}">
+<meta name="application-name" content="${attr(biz.name)}">
+<meta name="msapplication-TileColor" content="${attr(C.theme.colors.primary)}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${attr(biz.name)}">
 <meta property="og:locale" content="${attr(C.site.locale)}">
@@ -641,7 +646,7 @@ function render404() {
   return `<!doctype html>
 <html lang="${attr(C.site.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found${esc(C.site.titleSeparator)}${esc(biz.name)}</title><meta name="robots" content="noindex">
-<base href="/"><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<base href="/"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="assets/css/styles.css"><style>${themeCss()}</style></head>
 <body class="page-404">${header(from).replace(/href="\.\//g, 'href="/')}
 <main id="main"><section class="page-header"><div class="container"><p class="eyebrow">404</p><h1>That page doesn't exist.</h1><p class="lede">The link may be out of date. Try one of the pages in the menu, or head back to the home page.</p><div class="btn-row"><a class="btn btn--primary" href="/">Back to home</a></div></div></section></main>
@@ -651,8 +656,24 @@ ${footer(from).replace(/href="\.\//g, 'href="/')}</body></html>
 
 function faviconSvg() {
   const c = C.theme.colors;
-  const mark = esc((biz.logo.mark || biz.name[0] || "M").toString().slice(0, 2));
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="${c.primary}"/><text x="32" y="44" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700" fill="${c.onPrimary}">${mark}</text></svg>\n`;
+  // Draw the Flowline monogram as vector geometry so it stays crisp at every size.
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${c.primary}"/><stop offset="1" stop-color="${c.primaryDark || c.primary}"/></linearGradient></defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <path d="M43 17H24c-4 0-7 3-7 7v23h9V36h15v-8H26v-3h17z" fill="${c.onPrimary}" />
+  <path d="M31 40h16v7H31z" fill="${c.onPrimary}" opacity=".72"/>
+  </svg>\n`;
+}
+function webManifest() {
+  return JSON.stringify({
+    name: biz.name,
+    short_name: biz.name.slice(0, 12),
+    start_url: "/",
+    display: "standalone",
+    background_color: C.theme.colors.background,
+    theme_color: C.theme.colors.primary,
+    icons: [{ src: "/favicon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" }]
+  }, null, 2) + "\\n";
 }
 
 /* ------------------------------ build ------------------------------ */
@@ -679,6 +700,7 @@ for (const key of pageKeys) {
 }
 fs.writeFileSync(path.join(OUT, "404.html"), render404());
 fs.writeFileSync(path.join(OUT, "favicon.svg"), faviconSvg());
+fs.writeFileSync(path.join(OUT, "site.webmanifest"), webManifest());
 
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(

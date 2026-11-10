@@ -96,7 +96,7 @@ module.exports = {
   },
 
   form: {
-    endpoint: "",
+    endpoint: "/api/contact",
     enquiryTypes: ["Website design", "Motion graphics", "Video editing", "Multiple services", "General enquiry"],
     quoteType: "Website design",
     messages: {

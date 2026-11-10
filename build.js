@@ -673,7 +673,7 @@ function webManifest() {
     background_color: C.theme.colors.background,
     theme_color: C.theme.colors.primary,
     icons: [{ src: "/favicon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" }]
-  }, null, 2) + "\\n";
+  }, null, 2) + "\n";
 }
 
 /* ------------------------------ build ------------------------------ */

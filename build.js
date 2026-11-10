@@ -655,14 +655,7 @@ ${footer(from).replace(/href="\.\//g, 'href="/')}</body></html>
 }
 
 function faviconSvg() {
-  const c = C.theme.colors;
-  // Draw the Flowline monogram as vector geometry so it stays crisp at every size.
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${c.primary}"/><stop offset="1" stop-color="${c.primaryDark || c.primary}"/></linearGradient></defs>
-  <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <path d="M43 17H24c-4 0-7 3-7 7v23h9V36h15v-8H26v-3h17z" fill="${c.onPrimary}" />
-  <path d="M31 40h16v7H31z" fill="${c.onPrimary}" opacity=".72"/>
-  </svg>\n`;
+  return fs.readFileSync(path.join(SRC, "assets", "img", "flowline-icon.svg"), "utf8");
 }
 function webManifest() {
   return JSON.stringify({

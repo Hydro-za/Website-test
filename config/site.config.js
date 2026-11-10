@@ -14,10 +14,10 @@ module.exports = {
     priceRange: null,
     areaServed: ["Durban", "KwaZulu-Natal", "South Africa"],
     logo: {
-      type: "text",
-      src: "",
+      type: "image+name",
+      src: "assets/img/flowline-icon.svg",
       srcOnDark: "",
-      alt: "Flowline Studio",
+      alt: "Flowline Studio wave symbol",
       width: 44,
       height: 44,
       mark: "F",

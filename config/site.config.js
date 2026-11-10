@@ -145,7 +145,7 @@ module.exports = {
         price: null,
         cta: "Discuss an online store",
         featured: true,
-        image: { src: "assets/img/illustration-ecommerce.svg", alt: "Illustrated ecommerce storefront with product cards and shopping cart" },
+        image: { src: "assets/img/illustration-website.svg", alt: "Illustrated ecommerce storefront with product cards and shopping cart" },
       },
     ],
     pricing: {

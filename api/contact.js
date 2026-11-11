@@ -2,13 +2,9 @@
  * Flowline Studio contact form endpoint.
  * Runs as a Vercel Node.js Function at POST /api/contact.
  */
-const ALLOWED_ENQUIRIES = new Set([
-  "Website design",
-  "Motion graphics",
-  "Video editing",
-  "Multiple services",
-  "General enquiry",
-]);
+// Accepted enquiry types come from the site config, so the form and this endpoint cannot drift apart.
+const SITE_CONFIG = require("../config/site.config.js");
+const ALLOWED_ENQUIRIES = new Set(SITE_CONFIG.form.enquiryTypes);
 
 const json = (res, status, body) => {
   res.statusCode = status;

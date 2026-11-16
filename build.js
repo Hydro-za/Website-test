@@ -496,6 +496,7 @@ function footer(from) {
   <div class="container footer__bar">
     <p>&copy; ${year} ${esc(biz.legalName || biz.name)}. ${esc(C.footer.legal)}</p>
     ${C.footer.extraLinks?.length ? `<ul>${C.footer.extraLinks.map((l) => `<li><a href="${attr(l.href)}">${esc(l.label)}</a></li>`).join("")}</ul>` : ""}
+    ${C.footer.credit?.enabled ? `<p class="footer__credit">${esc(C.footer.credit.text || "Website by")} ${C.footer.credit.url ? `<a href="${attr(C.footer.credit.url)}" target="_blank" rel="noopener">${esc(C.footer.credit.name)}<span class="visually-hidden"> (opens in a new tab)</span></a>` : esc(C.footer.credit.name)}</p>` : ""}
   </div>
 </footer>`;
 }

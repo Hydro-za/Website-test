@@ -93,6 +93,8 @@ module.exports = {
     columns: ["explore", "contact"],
     legal: "All rights reserved.",
     extraLinks: [],
+    // Credit line at the very bottom of every page. Set enabled: false to hide it.
+    credit: { enabled: true, text: "Website by", name: "Flowline Studio", url: "https://flowlinestudio.co.za" },
   },
 
   form: {

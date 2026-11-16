@@ -274,7 +274,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
 .social--footer a { color: #fff; border-color: rgba(255,255,255,.3); }
 .social--footer a:hover { background: #fff; color: var(--c-ink); border-color: #fff; }
 .footer__bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin-top: clamp(2.5rem, 5vw, 4rem); padding-block: 1.5rem; border-top: 1px solid rgba(255,255,255,.15); font-size: .88rem; color: rgba(255,255,255,.65); }
-.footer__bar p { margin: 0; } .footer__bar ul { display: flex; gap: 1.25rem; } .footer__bar li { margin: 0; }
+.footer__bar p { margin: 0; } .footer__credit a { color: #fff; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); } .footer__credit a:hover { border-bottom-color: #fff; } .footer__bar ul { display: flex; gap: 1.25rem; } .footer__bar li { margin: 0; }
 
 /* ---------- Top bar ---------- */
 .topbar { background: var(--c-ink); color: rgba(255,255,255,.82); font-size: .84rem; }

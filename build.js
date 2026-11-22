@@ -15,6 +15,10 @@ const argIdx = process.argv.indexOf("--config");
 const CONFIG_PATH = path.resolve(ROOT, argIdx > -1 ? process.argv[argIdx + 1] : "config/site.config.js");
 delete require.cache[CONFIG_PATH];
 const C = require(CONFIG_PATH);
+const ASSET_V = require("crypto").createHash("md5").update(
+  require("fs").readFileSync(require("path").join(__dirname, "src/assets/css/styles.css")) +
+  require("fs").readFileSync(require("path").join(__dirname, "src/assets/js/main.js"))
+).digest("hex").slice(0, 8); // cache-busting version for CSS/JS
 const SRC = path.join(ROOT, "src");
 const OUT = path.join(ROOT, C.site.outputDir || "dist");
 const warnings = [];
@@ -636,7 +640,7 @@ ${p.seo.keywords?.length ? `<meta name="keywords" content="${attr(p.seo.keywords
 <meta name="twitter:description" content="${attr(p.seo.description)}">
 <meta name="twitter:image" content="${attr(og)}">
 ${fonts}
-<link rel="stylesheet" href="${attr(prefixFor(key))}assets/css/styles.css">
+<link rel="stylesheet" href="${attr(prefixFor(key))}assets/css/styles.css?v=${ASSET_V}">
 <style>${themeCss()}</style>
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">${JSON.stringify(pageSchema(key))}</script>
@@ -648,7 +652,7 @@ ${body}
 </main>
 ${footer(from)}
 ${key === "contact" ? "" : waFloat()}
-<script src="${attr(prefixFor(key))}assets/js/main.js" defer></script>
+<script src="${attr(prefixFor(key))}assets/js/main.js?v=${ASSET_V}" defer></script>
 </body>
 </html>
 `;
@@ -660,7 +664,7 @@ function render404() {
 <html lang="${attr(C.site.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found${esc(C.site.titleSeparator)}${esc(biz.name)}</title><meta name="robots" content="noindex">
 <base href="/"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/styles.css"><style>${themeCss()}</style></head>
+<link rel="stylesheet" href="assets/css/styles.css?v=${ASSET_V}"><style>${themeCss()}</style></head>
 <body class="page-404">${header(from).replace(/href="\.\//g, 'href="/')}
 <main id="main"><section class="page-header"><div class="container"><p class="eyebrow">404</p><h1>That page doesn't exist.</h1><p class="lede">The link may be out of date. Try one of the pages in the menu, or head back to the home page.</p><div class="btn-row"><a class="btn btn--primary" href="/">Back to home</a></div></div></section></main>
 ${footer(from).replace(/href="\.\//g, 'href="/')}</body></html>

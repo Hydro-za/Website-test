@@ -374,6 +374,17 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
   .hero__chips li:nth-child(1) { left: 2%; top: 4%; }
   .hero__chips li:nth-child(2) { right: 2%; }
   .hero__chips li:nth-child(3) { left: 6%; bottom: -3%; }
+  /* text first on tablets and phones, so the message and button are on the first screen */
+  .hero__media { order: 1; }
+  .hero__grid { gap: 2.25rem; }
+}
+@media (max-width: 640px) {
+  .hero { padding-block: 1.75rem 3rem; }
+  .hero h1 { font-size: clamp(2.15rem, 9.4vw, 2.6rem); line-height: 1.08; }
+  .hero .eyebrow { font-size: .72rem; letter-spacing: .1em; }
+  .hero .btn-row .btn { flex: 1 1 100%; justify-content: center; }
+  .hero__chips { display: none; }
+  .hero__media > img { animation: none; }
 }
 
 /* marquee */

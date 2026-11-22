@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-label="Illustration of a custom business dashboard with metrics, a chart and a task list">
+<rect width="800" height="620" rx="28" fill="#eef3f8"/>
+<g stroke="#172b45" stroke-width="3">
+<rect x="90" y="80" width="620" height="440" rx="18" fill="#fff"/>
+<path d="M90 80h0" />
+<rect x="90" y="80" width="130" height="440" rx="18" fill="#172b45"/><rect x="190" y="80" width="30" height="440" fill="#172b45" stroke="none"/>
+<g stroke="none"><rect x="112" y="108" width="86" height="14" rx="7" fill="#fff" opacity=".9"/>
+<rect x="112" y="156" width="86" height="34" rx="9" fill="#315f91"/><rect x="124" y="168" width="60" height="10" rx="5" fill="#fff" opacity=".85"/>
+<rect x="124" y="212" width="62" height="10" rx="5" fill="#fff" opacity=".4"/><rect x="124" y="244" width="70" height="10" rx="5" fill="#fff" opacity=".4"/><rect x="124" y="276" width="50" height="10" rx="5" fill="#fff" opacity=".4"/><rect x="124" y="308" width="66" height="10" rx="5" fill="#fff" opacity=".4"/></g>
+<g stroke="#cbd9e8" stroke-width="2"><rect x="242" y="104" width="136" height="74" rx="12" fill="#eaf0f7"/><rect x="392" y="104" width="136" height="74" rx="12" fill="#eaf0f7"/><rect x="542" y="104" width="148" height="74" rx="12" fill="#eaf0f7"/></g>
+<g stroke="none"><rect x="258" y="120" width="60" height="10" rx="5" fill="#cbd9e8"/><rect x="258" y="142" width="84" height="22" rx="6" fill="#315f91"/>
+<rect x="408" y="120" width="60" height="10" rx="5" fill="#cbd9e8"/><rect x="408" y="142" width="70" height="22" rx="6" fill="#477db4"/>
+<rect x="558" y="120" width="60" height="10" rx="5" fill="#cbd9e8"/><rect x="558" y="142" width="96" height="22" rx="6" fill="#8caed0"/></g>
+<rect x="242" y="196" width="448" height="128" rx="12" fill="#fff" stroke="#cbd9e8" stroke-width="2"/>
+<path d="M262 296l50-34 48 18 56-52 52 28 60-42 58 24" fill="none" stroke="#477db4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M262 306h410" stroke="#dbe6f2" stroke-width="2"/>
+<rect x="262" y="352" width="20" height="20" rx="5" fill="#315f91" stroke="#315f91" stroke-width="2.5"/><path d="M267 362l4 4 7-9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="296" y="355" width="200" height="12" rx="6" fill="#cbd9e8" stroke="none"/>
+<rect x="590" y="352" width="58" height="22" rx="11" fill="#bcd3ea" stroke="none"/><rect x="262" y="392" width="20" height="20" rx="5" fill="#315f91" stroke="#315f91" stroke-width="2.5"/><path d="M267 402l4 4 7-9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="296" y="395" width="160" height="12" rx="6" fill="#cbd9e8" stroke="none"/>
+<rect x="590" y="392" width="58" height="22" rx="11" fill="#bcd3ea" stroke="none"/><rect x="262" y="432" width="20" height="20" rx="5" fill="#fff" stroke="#315f91" stroke-width="2.5"/>
+<rect x="296" y="435" width="230" height="12" rx="6" fill="#cbd9e8" stroke="none"/>
+<rect x="590" y="432" width="58" height="22" rx="11" fill="#f4d9a8" stroke="none"/>
+</g>
+<circle cx="690" cy="500" r="48" fill="#d8e6f4" stroke="#315f91" stroke-width="3"/><path d="M668 500l16 16 28-34" fill="none" stroke="#315f91" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

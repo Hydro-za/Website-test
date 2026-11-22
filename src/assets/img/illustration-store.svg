@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-label="Illustration of an online store with product cards and a shopping cart">
+<rect width="800" height="620" rx="28" fill="#eef3f8"/>
+<g stroke="#172b45" stroke-width="3">
+<rect x="100" y="80" width="600" height="430" rx="18" fill="#fff"/>
+<path d="M100 136h600" stroke="#dbe6f2"/>
+<circle cx="130" cy="108" r="7" fill="#6c91bd" stroke="none"/><circle cx="154" cy="108" r="7" fill="#9db4ce" stroke="none"/><circle cx="178" cy="108" r="7" fill="#c2d0df" stroke="none"/>
+<rect x="260" y="94" width="230" height="28" rx="14" fill="#eaf0f7" stroke="#cbd9e8" stroke-width="2"/>
+<path d="M640 96h8l5 18h20l5-14h-30" fill="none" stroke="#315f91" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="656" cy="122" r="3" fill="#315f91" stroke="none"/><circle cx="672" cy="122" r="3" fill="#315f91" stroke="none"/>
+<rect x="126" y="150" width="548" height="0" fill="none"/>
+<rect x="126" y="170" width="150" height="190" rx="14" fill="#fff" stroke="#cbd9e8" stroke-width="2"/>
+<rect x="138" y="182" width="126" height="102" rx="10" fill="#eaf0f7" stroke="none"/><rect x="166" y="196" width="70" height="70" rx="10" fill="#8caed0" stroke="none"/>
+<rect x="140" y="298" width="86" height="10" rx="5" fill="#cbd9e8" stroke="none"/>
+<rect x="140" y="318" width="50" height="14" rx="6" fill="#172b45" stroke="none"/>
+<circle cx="246" cy="324" r="16" fill="#315f91" stroke="none"/><path d="M246 316v16M238 324h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/><rect x="300" y="170" width="150" height="190" rx="14" fill="#fff" stroke="#cbd9e8" stroke-width="2"/>
+<rect x="312" y="182" width="126" height="102" rx="10" fill="#eaf0f7" stroke="none"/><circle cx="375" cy="231" r="38" fill="#477db4" stroke="none"/>
+<rect x="314" y="298" width="86" height="10" rx="5" fill="#cbd9e8" stroke="none"/>
+<rect x="314" y="318" width="50" height="14" rx="6" fill="#172b45" stroke="none"/>
+<circle cx="420" cy="324" r="16" fill="#315f91" stroke="none"/><path d="M420 316v16M412 324h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/><rect x="474" y="170" width="150" height="190" rx="14" fill="#fff" stroke="#cbd9e8" stroke-width="2"/>
+<rect x="486" y="182" width="126" height="102" rx="10" fill="#eaf0f7" stroke="none"/><path d="M549 192l42 76h-84z" fill="#9db4ce" stroke="none"/>
+<rect x="488" y="298" width="86" height="10" rx="5" fill="#cbd9e8" stroke="none"/>
+<rect x="488" y="318" width="50" height="14" rx="6" fill="#172b45" stroke="none"/>
+<circle cx="594" cy="324" r="16" fill="#315f91" stroke="none"/><path d="M594 316v16M586 324h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+<rect x="126" y="378" width="548" height="104" rx="14" fill="#315f91" stroke="none"/>
+<rect x="154" y="402" width="190" height="16" rx="8" fill="#fff" stroke="none" opacity=".92"/>
+<rect x="154" y="430" width="140" height="10" rx="5" fill="#fff" stroke="none" opacity=".6"/>
+<rect x="154" y="452" width="96" height="16" rx="8" fill="#172b45" stroke="none" opacity="0"/>
+<rect x="520" y="404" width="128" height="40" rx="10" fill="#fff" stroke="none"/><rect x="540" y="419" width="88" height="10" rx="5" fill="#315f91" stroke="none"/>
+</g>
+<circle cx="672" cy="498" r="56" fill="#d8e6f4" stroke="#315f91" stroke-width="3"/>
+<path d="M648 478h10l6 26h26l6-20h-40" fill="none" stroke="#315f91" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="670" cy="516" r="4" fill="#315f91"/><circle cx="692" cy="516" r="4" fill="#315f91"/>
+<circle cx="706" cy="462" r="15" fill="#172b45"/><text x="706" y="468" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#fff">3</text>
+</svg>

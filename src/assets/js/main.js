@@ -28,8 +28,13 @@
     });
   }
   if (header) {
+    var bar = document.querySelector(".scroll-progress");
     var onScroll = function () {
       header.classList.toggle("is-scrolled", window.scrollY > 8);
+      if (bar) {
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.setProperty("--p", max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : 0);
+      }
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

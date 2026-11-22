@@ -1,26 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
-  <defs>
-    <clipPath id="frame"><rect x="0" y="0" width="800" height="620" rx="28"/></clipPath>
-  </defs>
-  <g clip-path="url(#frame)">
-    <rect width="800" height="620" fill="#edf2f8"/>
-    <circle cx="650" cy="125" r="92" fill="#dce8f4"/>
-    <circle cx="125" cy="500" r="76" fill="#dce8f4"/>
-    <rect x="130" y="82" width="540" height="430" rx="22" fill="#fff" stroke="#172b45" stroke-width="3"/>
-    <path d="M130 145h540" stroke="#dbe4ee" stroke-width="3"/>
-    <circle cx="164" cy="113" r="7" fill="#8caed0"/><circle cx="190" cy="113" r="7" fill="#c4d4e5"/>
-    <rect x="174" y="180" width="205" height="18" rx="9" fill="#cbd9e8"/>
-    <rect x="174" y="215" width="155" height="10" rx="5" fill="#e2eaf2"/>
-    <rect x="174" y="239" width="175" height="10" rx="5" fill="#e2eaf2"/>
-    <rect x="174" y="278" width="112" height="38" rx="9" fill="#315f91"/>
-    <rect x="414" y="180" width="210" height="168" rx="14" fill="#eaf0f7" stroke="#cbd8e6" stroke-width="2"/>
-    <path d="M440 315l48-55 38 31 36-48 36 72" fill="none" stroke="#477db4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-    <rect x="174" y="390" width="450" height="82" rx="12" fill="#f2f6fa" stroke="#dbe4ee" stroke-width="2"/>
-    <rect x="196" y="414" width="100" height="18" rx="6" fill="#cbd9e8"/>
-    <rect x="320" y="414" width="100" height="18" rx="6" fill="#dce6f0"/>
-    <rect x="444" y="414" width="150" height="18" rx="6" fill="#dce6f0"/>
-    <circle cx="650" cy="420" r="30" fill="#315f91"/>
-    <path d="M638 420h24m-12-12v24" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="112" cy="210" r="16" fill="#315f91"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration of a website on desktop and phone with a business dashboard card">
+<defs><clipPath id="f"><rect width="800" height="600" rx="28"/></clipPath></defs>
+<g clip-path="url(#f)">
+<rect width="800" height="600" fill="#eef3f8"/>
+<circle cx="690" cy="80" r="110" fill="#dce8f4"/><circle cx="90" cy="540" r="90" fill="#dce8f4"/>
+<g stroke="#172b45" stroke-width="3">
+<rect x="70" y="64" width="500" height="380" rx="20" fill="#fff"/>
+<path d="M70 120h500" stroke="#dbe6f2"/>
+<circle cx="102" cy="92" r="7" fill="#8caed0" stroke="none"/><circle cx="126" cy="92" r="7" fill="#c4d4e5" stroke="none"/><circle cx="150" cy="92" r="7" fill="#dbe6f2" stroke="none"/>
+<rect x="110" y="158" width="230" height="20" rx="10" fill="#cbd9e8" stroke="none"/>
+<rect x="110" y="196" width="180" height="11" rx="5" fill="#e2eaf2" stroke="none"/>
+<rect x="110" y="218" width="205" height="11" rx="5" fill="#e2eaf2" stroke="none"/>
+<rect x="110" y="256" width="124" height="40" rx="10" fill="#315f91" stroke="none"/>
+<rect x="250" y="256" width="96" height="40" rx="10" fill="#fff" stroke="#172b45" stroke-width="2"/>
+<rect x="372" y="152" width="170" height="150" rx="14" fill="#eaf0f7" stroke="#cbd9e8" stroke-width="2"/>
+<path d="M392 276l36-48 28 24 30-46 36 62" fill="none" stroke="#477db4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<g stroke="none"><rect x="110" y="330" width="130" height="86" rx="12" fill="#eaf0f7"/><rect x="254" y="330" width="130" height="86" rx="12" fill="#eaf0f7"/><rect x="398" y="330" width="144" height="86" rx="12" fill="#eaf0f7"/>
+<circle cx="140" cy="358" r="12" fill="#477db4"/><rect x="126" y="384" width="80" height="9" rx="4" fill="#cbd9e8"/><rect x="126" y="400" width="56" height="9" rx="4" fill="#dbe6f2"/>
+<circle cx="284" cy="358" r="12" fill="#315f91"/><rect x="270" y="384" width="80" height="9" rx="4" fill="#cbd9e8"/><rect x="270" y="400" width="56" height="9" rx="4" fill="#dbe6f2"/>
+<circle cx="428" cy="358" r="12" fill="#8caed0"/><rect x="414" y="384" width="90" height="9" rx="4" fill="#cbd9e8"/><rect x="414" y="400" width="60" height="9" rx="4" fill="#dbe6f2"/></g>
+<!-- phone -->
+<rect x="548" y="150" width="170" height="338" rx="30" fill="#172b45"/>
+<rect x="558" y="162" width="150" height="314" rx="22" fill="#fff" stroke="none"/>
+<rect x="612" y="168" width="42" height="8" rx="4" fill="#172b45" stroke="none"/>
+<rect x="574" y="196" width="118" height="12" rx="6" fill="#cbd9e8" stroke="none"/>
+<rect x="574" y="218" width="84" height="9" rx="4" fill="#e2eaf2" stroke="none"/>
+<rect x="574" y="244" width="118" height="84" rx="12" fill="#eaf0f7" stroke="none"/>
+<path d="M590 312l22-28 18 14 20-26 26 40" fill="none" stroke="#477db4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="574" y="342" width="56" height="52" rx="10" fill="#dbe6f2" stroke="none"/><rect x="636" y="342" width="56" height="52" rx="10" fill="#eaf0f7" stroke="none"/>
+<rect x="574" y="412" width="118" height="36" rx="10" fill="#315f91" stroke="none"/>
+<!-- dashboard card -->
+<rect x="44" y="388" width="300" height="168" rx="18" fill="#fff"/>
+<rect x="64" y="410" width="90" height="12" rx="6" fill="#cbd9e8" stroke="none"/>
+<rect x="64" y="430" width="60" height="9" rx="4" fill="#dbe6f2" stroke="none"/>
+<g stroke="none"><rect x="70" y="484" width="26" height="52" rx="5" fill="#cbd9e8"/><rect x="108" y="466" width="26" height="70" rx="5" fill="#8caed0"/><rect x="146" y="494" width="26" height="42" rx="5" fill="#cbd9e8"/><rect x="184" y="450" width="26" height="86" rx="5" fill="#477db4"/><rect x="222" y="472" width="26" height="64" rx="5" fill="#8caed0"/><rect x="260" y="440" width="26" height="96" rx="5" fill="#315f91"/></g>
+<circle cx="296" cy="424" r="18" fill="none" stroke="#dbe6f2" stroke-width="7"/><path d="M296 406a18 18 0 0 1 17 24" fill="none" stroke="#315f91" stroke-width="7" stroke-linecap="round"/>
+</g>
+<circle cx="700" cy="104" r="34" fill="#315f91"/><path d="M684 104l12 12 22-26" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>

@@ -74,6 +74,11 @@ module.exports = {
     mapLink: "",
     hours: [],
     social: [],
+    nextSteps: [
+      "We read your message and look at what you need.",
+      "We reply by email or phone to talk through the next steps.",
+      "We agree the scope and send you a quote.",
+    ],
   },
 
   topBar: { enabled: false, message: "", showHours: false, showEmail: false },
@@ -90,7 +95,7 @@ module.exports = {
 
   footer: {
     blurb: "Website design, ecommerce stores and custom business systems for businesses ready to grow online and work smarter.",
-    columns: ["explore", "contact"],
+    columns: ["explore", "services", "contact"],
     legal: "All rights reserved.",
     extraLinks: [],
     // Credit line at the very bottom of every page. Set enabled: false to hide it.
@@ -135,7 +140,7 @@ module.exports = {
         price: null,
         cta: "Discuss a business system",
         featured: true,
-        image: { src: "assets/img/illustration-process.svg", alt: "Illustrated business workflow and connected system diagram" },
+        image: { src: "assets/img/illustration-systems.svg", alt: "Illustrated custom business dashboard with metrics, a chart and a task list" },
       },
       {
         id: "ecommerce-websites",
@@ -147,7 +152,7 @@ module.exports = {
         price: null,
         cta: "Discuss an online store",
         featured: true,
-        image: { src: "assets/img/illustration-website.svg", alt: "Illustrated ecommerce storefront with product cards and shopping cart" },
+        image: { src: "assets/img/illustration-store.svg", alt: "Illustrated online store with product cards and a shopping cart", width: 800, height: 620 },
       },
     ],
     pricing: {
@@ -161,7 +166,7 @@ module.exports = {
     home: {
       slug: "",
       seo: {
-        title: "Web Design, Ecommerce & Custom Business Systems in Durban",
+        title: "Web Design & Business Systems in Durban",
         description: "Flowline Studio helps businesses in Durban and across South Africa with website design, ecommerce websites and custom business systems.",
         keywords: ["web design Durban", "ecommerce websites Durban", "online stores South Africa", "custom business systems South Africa", "business management software Durban"],
       },
@@ -174,7 +179,13 @@ module.exports = {
           primaryCta: { label: "Start a project", page: "contact", query: "?enquiry=quote" },
           secondaryCta: { label: "Explore our services", page: "services" },
           highlights: ["Designed for small businesses", "Modern, mobile-first experiences", "Creative work with purpose"],
-          image: { src: "assets/img/illustration-hero.svg", alt: "Illustrated responsive website interface" , width: 1400, height: 1050 },
+          chips: ["Websites", "Online stores", "Business systems"],
+          image: { src: "assets/img/illustration-hero.svg", alt: "Illustration of a business website on desktop and phone, next to a performance dashboard", width: 1400, height: 1050 },
+        },
+        {
+          type: "marquee",
+          label: "What Flowline Studio makes",
+          items: ["Website design", "Ecommerce websites", "Custom business systems", "Mobile-first layouts", "Built in Durban", "Search-friendly structure"],
         },
         {
           type: "intro",
@@ -197,6 +208,7 @@ module.exports = {
         },
         {
           type: "features",
+          dark: true,
           eyebrow: "The Flowline approach",
           heading: "Good design should do more than look good.",
           items: [
@@ -263,7 +275,7 @@ module.exports = {
     services: {
       slug: "services",
       seo: {
-        title: "Website Design, Custom Business Systems & Creative Services",
+        title: "Web Design, Ecommerce & Business Systems",
         description: "Explore Flowline Studio's website design, ecommerce websites and custom business systems in Durban and South Africa.",
         keywords: ["business website design", "ecommerce website design Durban", "online store development South Africa", "custom business systems", "business management software"],
       },

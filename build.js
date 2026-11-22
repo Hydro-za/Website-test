@@ -106,12 +106,23 @@ R.hero = (s, from) => `
   <div class="container hero__grid">
     <div class="hero__copy">
       ${s.eyebrow ? `<p class="eyebrow">${esc(s.eyebrow)}</p>` : ""}
-      <h1>${esc(s.headline)}</h1>
+      <h1>${esc(s.headline).split(" ").map((w, n) => `<span class="w" style="--i:${n}">${w}</span>`).join(" ")}</h1>
       <p class="hero__text">${esc(s.text)}</p>
       <div class="btn-row">${btn(from, s.primaryCta)}${btn(from, s.secondaryCta, "ghost")}</div>
       ${s.highlights?.length ? `<ul class="ticks">${s.highlights.map((h) => `<li>${icon("check", "icon icon--sm")}${esc(h)}</li>`).join("")}</ul>` : ""}
     </div>
-    <div class="hero__media">${img(from, s.image, { eager: true, sizes: "(min-width: 900px) 46vw, 100vw" })}</div>
+    <div class="hero__media">
+      ${img(from, s.image, { eager: true, sizes: "(min-width: 900px) 46vw, 100vw" })}
+      ${s.chips?.length ? `<ul class="hero__chips" aria-hidden="true">${s.chips.slice(0, 3).map((c) => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
+    </div>
+  </div>
+</section>`;
+
+R.marquee = (s) => `
+<section class="marquee" aria-label="${attr(s.label || "Highlights")}">
+  <div class="marquee__track">
+    <ul>${s.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+    <ul aria-hidden="true">${s.items.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
   </div>
 </section>`;
 
@@ -229,7 +240,7 @@ R.pricing = (s, from) => {
 };
 
 R.features = (s) => `
-<section class="section">
+<section class="section${s.dark ? " section--dark" : ""}">
   <div class="container">
     ${head(s.eyebrow, s.heading, s.intro)}
     <ul class="features">
@@ -279,7 +290,7 @@ const listSection = (cls) => (s) => `
 <section class="section${cls === "differentiators" ? " section--alt" : ""}">
   <div class="container">
     ${head(s.eyebrow, s.heading, s.intro)}
-    <ul class="numbered">
+    <ul class="numbered numbered--${s.items.length}">
       ${s.items.map((v, i) => `<li${reveal}><span class="numbered__n" aria-hidden="true"></span><div><h3>${esc(v.title)}</h3><p>${esc(v.text)}</p></div></li>`).join("")}
     </ul>
   </div>
@@ -405,8 +416,8 @@ R.contactMain = (s, from) => {
         ${wa ? `<li>${icon("whatsapp")}<div><span class="label">WhatsApp</span><a class="btn btn--whatsapp" href="${attr(wa)}" target="_blank" rel="noopener noreferrer">Chat on WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a></div></li>` : ""}
         <li>${icon("pin")}<div><span class="label">Address</span><address>${addressLines().map(esc).join("<br>")}</address>${ct.mapLink ? `<a class="arrow-link" href="${attr(ct.mapLink)}" target="_blank" rel="noopener noreferrer">Open in Google Maps${icon("arrow", "icon icon--sm")}</a>` : ""}</div></li>
       </ul>
-      <h3>Opening hours</h3>
-      ${hoursList()}
+      ${ct.hours?.length ? `<h3>Opening hours</h3>${hoursList()}` : ""}
+      ${ct.nextSteps?.length ? `<h3>What happens next</h3><ol class="next-steps">${ct.nextSteps.map((t) => `<li>${esc(t)}</li>`).join("")}</ol>` : ""}
       ${ct.social?.length ? `<h3>Follow us</h3>${socialLinks()}` : ""}
     </aside>
   </div>
@@ -458,7 +469,7 @@ function waFloat() {
 
 function header(from) {
   return `
-<a class="skip-link" href="#main">Skip to main content</a>${topbar()}
+<a class="skip-link" href="#main">Skip to main content</a><div class="scroll-progress" aria-hidden="true"></div>${topbar()}
 <header class="site-header" id="top">
   <div class="container site-header__inner">
     <a class="brand" href="${attr(linkTo(from, "home"))}"${from === "home" ? ' aria-label="' + attr(biz.name) + ' home"' : ""}>${logoHtml(from)}</a>
@@ -482,6 +493,7 @@ function footer(from) {
       <li><address>${addressLines().map(esc).join("<br>")}</address></li>
     </ul>${socialLinks("social social--footer")}</div>`,
     hours: `<div><h2 class="footer__h">Opening hours</h2>${hoursList()}</div>`,
+    services: `<div><h2 class="footer__h">${esc(C.catalogue.itemLabelPlural ? C.catalogue.itemLabelPlural[0].toUpperCase() + C.catalogue.itemLabelPlural.slice(1) : "Services")}</h2><ul>${C.catalogue.items.map((it) => `<li><a href="${attr(linkTo(from, "services"))}#${attr(it.id)}">${esc(it.name)}</a></li>`).join("")}</ul></div>`,
   };
   const year = new Date().getFullYear();
   return `
@@ -585,7 +597,7 @@ function renderPage(key, extra = {}) {
   const body = p.sections.map((s) => {
     if (!R[s.type]) throw new Error(`Unknown section type "${s.type}" on page "${key}"`);
     let html = R[s.type](s, from);
-    if (html && AUTO.has(s.type)) {
+    if (html && AUTO.has(s.type) && !/section--dark/.test(html)) {
       html = html.replace(/class="section( section--alt)?"/, `class="section${alt ? " section--alt" : ""}"`);
       alt = !alt;
     }

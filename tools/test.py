@@ -9,6 +9,7 @@ srv = subprocess.Popen([sys.executable, "-m", "http.server", str(PORT), "-d", RO
 time.sleep(1)
 BASE = f"http://127.0.0.1:{PORT}"
 PAGES = ["/", "/about/", "/services/", "/contact/"]
+CFG = json.loads(subprocess.check_output(["node", "-e", "const c=require('../config/site.config.js');console.log(JSON.stringify({top:!!(c.topBar&&c.topBar.enabled),wa:!!(c.contact.whatsapp&&c.contact.whatsappFloating),font:c.theme.fonts.heading.split(',')[0].replace(/[\"']/g,'').trim(),faq:(c.pages.services.sections.find(s=>s.type==='faq')||{items:[]}).items.length,steps:(c.pages.services.sections.find(s=>s.type==='process')||{items:[]}).items.length,quote:c.form.quoteType,types:c.form.enquiryTypes}))"], cwd=os.path.dirname(os.path.abspath(__file__))))
 fails, notes = [], []
 def check(cond, msg):
     (notes if cond else fails).append(("PASS " if cond else "FAIL ") + msg)
@@ -38,13 +39,13 @@ try:
                     # new components
                     logo = pg.evaluate("""()=>{const a=document.querySelector('.site-header .brand');const i=a.querySelector('img.brand__logo');const n=a.querySelector('.brand__name');return i&&n?{ok:i.getBoundingClientRect().right<=n.getBoundingClientRect().left+1,h:i.getBoundingClientRect().height}:null}""")
                     check(logo and logo["ok"], f"{tag}: logo image sits left of business name")
-                    check(pg.locator(".topbar a[href^='tel:']").count() == 1, f"{tag}: top bar with phone")
-                    check((pg.locator(".wa-float").count() == 1) == (path != "/contact/"), f"{tag}: floating WhatsApp (hidden on contact page)")
+                    check((pg.locator(".topbar a[href^='tel:']").count() == 1) == CFG["top"], f"{tag}: top bar matches config")
+                    check((pg.locator(".wa-float").count() == 1) == (CFG["wa"] and path != "/contact/"), f"{tag}: floating WhatsApp matches config")
                     ff = pg.evaluate("getComputedStyle(document.querySelector('h1')).fontFamily")
-                    check("Plus Jakarta Sans" in ff, f"{tag}: heading font stack starts with Plus Jakarta Sans")
+                    check(CFG["font"] in ff, f"{tag}: heading font is {CFG['font']}")
                     if path == "/services/":
                         d = pg.locator(".faq__item")
-                        check(d.count() == 5 and pg.locator(".steps li").count() == 4, f"{tag}: FAQ (5) and process steps (4) render")
+                        check(d.count() == CFG["faq"] and pg.locator(".steps li").count() == CFG["steps"], f"{tag}: FAQ and process steps render")
                         d.nth(0).locator("summary").click()
                         check(d.nth(0).evaluate("e=>e.open"), f"{tag}: FAQ item opens on click")
                         ld = pg.evaluate("[...document.querySelectorAll('script[type=\"application/ld+json\"]')].map(s=>s.textContent).join()")
@@ -94,25 +95,26 @@ try:
 
         # form tests (no endpoint configured)
         ctx = b.new_context(viewport={"width": 1100, "height": 900}); pg = ctx.new_page(); pg.goto(BASE + "/contact/?enquiry=quote&service=Renovations", wait_until="networkidle")
-        check(pg.input_value("#f-type") == "Request a quote" and "Renovations" in pg.input_value("#f-message"), "query params prefill type and message")
+        check(pg.input_value("#f-type") == CFG["quote"] and "Renovations" in pg.input_value("#f-message"), "query params prefill type and message")
+        pg.evaluate("document.getElementById('contact-form').dataset.endpoint=''")
         pg.fill("#f-message", ""); pg.click("button[type=submit]")
         errs = pg.eval_on_selector_all(".field__error", "els=>els.map(e=>e.textContent).filter(Boolean)")
         check(len(errs) >= 3 and pg.evaluate("document.activeElement.id") == "f-name", f"empty submit shows errors and focuses first invalid ({len(errs)} errors)")
-        pg.fill("#f-name", "Test User"); pg.fill("#f-email", "not-an-email"); pg.fill("#f-phone", "abc"); pg.select_option("#f-type", "General enquiry"); pg.fill("#f-message", "short")
+        pg.fill("#f-name", "Test User"); pg.fill("#f-email", "not-an-email"); pg.fill("#f-phone", "abc"); pg.select_option("#f-type", CFG["types"][-1]); pg.fill("#f-message", "short")
         pg.click("button[type=submit]")
         e = pg.eval_on_selector_all(".field__error", "els=>els.map(e=>e.textContent).filter(Boolean)")
         check(any("valid email" in x for x in e) and any("phone" in x for x in e) and any("at least 10" in x for x in e), "invalid email / phone / short message rejected")
         pg.fill("#f-email", "test@example.com"); pg.fill("#f-phone", "+27 11 555 0100"); pg.fill("#f-message", "A proper message with enough length.")
         pg.click("button[type=submit]")
         st = pg.inner_text("#form-status")
-        check("isn't set up yet" in st and pg.locator("#form-status a[href^='mailto:']").count() == 1 and "has been sent" not in st, "no endpoint: honest 'not sent' message + mailto fallback (never claims success)")
+        check("not been sent" in st and pg.locator("#form-status a[href^='mailto:']").count() == 1 and "has been sent" not in st, "no endpoint: honest 'not sent' message + mailto fallback (never claims success)")
         pg.screenshot(path=os.path.join(shots, "form-notconnected.png"))
         # with a mock endpoint
         pg.route("**/mock-ok", lambda r: r.fulfill(status=200, body="{}", content_type="application/json"))
         pg.route("**/mock-fail", lambda r: r.fulfill(status=500, body="{}"))
         for url, expect in (("http://127.0.0.1:%d/mock-ok" % PORT, "has been sent"), ("http://127.0.0.1:%d/mock-fail" % PORT, "not sent")):
             pg.evaluate("u=>document.getElementById('contact-form').dataset.endpoint=u", url)
-            pg.fill("#f-name", "Test User"); pg.fill("#f-email", "test@example.com"); pg.select_option("#f-type", "General enquiry"); pg.fill("#f-message", "A proper message with enough length.")
+            pg.fill("#f-name", "Test User"); pg.fill("#f-email", "test@example.com"); pg.select_option("#f-type", CFG["types"][-1]); pg.fill("#f-message", "A proper message with enough length.")
             pg.click("button[type=submit]"); pg.wait_for_selector("#form-status > div"); time.sleep(.3)
             check(expect in pg.inner_text("#form-status"), f"endpoint {url.rsplit('/',1)[1]}: shows '{expect}'")
         ctx.close(); b.close()

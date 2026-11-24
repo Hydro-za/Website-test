@@ -88,6 +88,7 @@ module.exports = {
       { page: "home", label: "Home" },
       { page: "about", label: "About" },
       { page: "services", label: "Services" },
+      { page: "portfolio", label: "Portfolio" },
       { page: "contact", label: "Contact" },
     ],
     cta: { label: "Start a project", page: "contact", query: "?enquiry=quote" },
@@ -361,6 +362,59 @@ module.exports = {
           { name: "Advanced Platform", price: "Custom scope", summary: "A larger tailored platform for businesses with complex processes or integration needs.", features: ["Multiple connected modules", "Advanced roles and permissions", "Custom integrations where required", "Bespoke workflows and reporting"] },
         ] },
         { type: "cta", heading: "Let's map out your system.", text: "Explain the process you want to improve and we'll discuss what a practical custom solution could include.", primaryCta: { label: "Discuss a business system", page: "contact", query: "?enquiry=quote&service=Custom%20Business%20Systems" }, secondaryCta: { label: "View all services", page: "services" } },
+      ],
+    },
+
+    portfolio: {
+      slug: "portfolio",
+      seo: {
+        title: "Portfolio & Concept Projects",
+        description: "Explore website, ecommerce and custom business system concept projects by Flowline Studio, showing the design and functionality we can create.",
+        keywords: ["web design portfolio Durban", "ecommerce website examples", "custom business system design", "Flowline Studio portfolio"],
+      },
+      sections: [
+        { type: "pageHeader", eyebrow: "Selected work & concepts", heading: "A look at what we can create.", text: "Explore selected concept projects across website design, online stores and custom business systems. These examples demonstrate our design direction and capabilities; they are concepts, not claims of completed client work." },
+        {
+          type: "intro",
+          eyebrow: "Website design concept",
+          heading: "A clear, confident online presence.",
+          paragraphs: [
+            "A business website should make it easy for customers to understand what you offer, trust your brand and take the next step.",
+            "This concept explores a polished, responsive business website with clear service sections, considered typography and straightforward enquiry paths.",
+            "Concept preview · Demonstration design, not a completed client project.",
+          ],
+          link: { label: "Discuss a business website", page: "contact", query: "?enquiry=quote&service=Website%20Design" },
+          image: { src: "assets/img/illustration-website.svg", alt: "Illustrative preview of a responsive business website concept", width: 1200, height: 900 },
+        },
+        {
+          type: "story",
+          heading: "An online store designed around the product.",
+          paragraphs: [
+            "A good ecommerce experience helps customers browse confidently, understand product details and move smoothly towards checkout.",
+            "This concept demonstrates an organised storefront with product categories, product cards and a mobile-friendly shopping layout.",
+            "Concept preview · Demonstration design, not a completed client project.",
+          ],
+          image: { src: "assets/img/illustration-store.svg", alt: "Illustrative preview of an ecommerce storefront concept", width: 1200, height: 900 },
+        },
+        {
+          type: "intro",
+          eyebrow: "Business system concept",
+          heading: "Bring everyday operations into one place.",
+          paragraphs: [
+            "Custom business software can connect the tasks that keep a company moving, from customer records and job tracking to team workflows and reporting.",
+            "This concept shows the direction of a practical operations dashboard, designed to make important information easier to manage.",
+            "Concept preview · Demonstration design, not a completed client project.",
+          ],
+          link: { label: "Discuss a custom system", page: "contact", query: "?enquiry=quote&service=Custom%20Business%20Systems" },
+          image: { src: "assets/img/illustration-systems.svg", alt: "Illustrative preview of a custom business operations dashboard concept", width: 1200, height: 900 },
+        },
+        {
+          type: "cta",
+          heading: "Have a project in mind?",
+          text: "Tell us what you want to build and we'll discuss a solution around your business.",
+          primaryCta: { label: "Discuss your project", page: "contact", query: "?enquiry=quote" },
+          secondaryCta: { label: "Explore services", page: "services" },
+        },
       ],
     },
 

@@ -181,7 +181,7 @@ R.catalogue = (s, from) => {
         ${icon(it.icon, "icon icon--lg")}
         <h3>${esc(it.name)}</h3>
         <p>${esc(it.summary)}</p>
-        <a class="arrow-link" href="${attr(linkTo(from, "services"))}#${attr(it.id)}">Learn more<span class="visually-hidden"> about ${esc(it.name)}</span>${icon("arrow", "icon icon--sm")}</a>
+        <a class="arrow-link" href="${attr(it.page ? linkTo(from, it.page) : linkTo(from, "services") + "#" + it.id)}">Learn more<span class="visually-hidden"> about ${esc(it.name)}</span>${icon("arrow", "icon icon--sm")}</a>
       </li>`
         )
         .join("")}
@@ -210,7 +210,7 @@ R.catalogueDetail = (s, from) => `
           <p>${esc(it.description)}</p>
           ${it.benefits?.length ? `<ul class="ticks">${it.benefits.map((b) => `<li>${icon("check", "icon icon--sm")}${esc(b)}</li>`).join("")}</ul>` : ""}
           ${price}
-          <div class="btn-row"><a class="btn btn--primary" href="${attr(linkTo(from, "contact", q))}">${esc(it.cta || "Enquire")}</a></div>
+          <div class="btn-row"><a class="btn btn--primary" href="${attr(it.page ? linkTo(from, it.page) : linkTo(from, "contact", q))}">${esc(it.cta || "Enquire")}</a></div>
         </div>
       </article>`;
         })
@@ -242,6 +242,26 @@ R.pricing = (s, from) => {
   </div>
 </section>`;
 };
+
+R.servicePackages = (s, from) => `
+<section class="section section--alt">
+  <div class="container">
+    ${head(null, s.heading, s.intro)}
+    <ul class="pricing">
+      ${s.tiers.map((t) => {
+        const query = `?enquiry=quote&service=${encodeURIComponent(s.serviceName)}&package=${encodeURIComponent(t.name)}`;
+        return `
+      <li class="tier${t.highlight ? " tier--highlight" : ""}"${reveal}>
+        <h3>${esc(t.name)}</h3>
+        ${t.summary ? `<p class="tier__description">${esc(t.summary)}</p>` : ""}
+        <p class="tier__price"><strong>${esc(t.price || "Price to be confirmed")}</strong></p>
+        <ul class="ticks">${(t.features || []).map((f) => `<li>${icon("check", "icon icon--sm")}${esc(f)}</li>`).join("")}</ul>
+        <a class="btn ${t.highlight ? "btn--primary" : "btn--ghost"}" href="${attr(linkTo(from, "contact", query))}">Discuss this package</a>
+      </li>`;
+      }).join("")}
+    </ul>
+  </div>
+</section>`;
 
 R.features = (s) => `
 <section class="section${s.dark ? " section--dark" : ""}">
@@ -432,7 +452,7 @@ R.contactMain = (s, from) => {
 /* ------------------------------ layout ------------------------------ */
 function navLabel(key) {
   const it = C.nav.items.find((i) => i.page === key);
-  return it ? it.label : key;
+  return it ? it.label : (pages[key]?.label || key);
 }
 
 const logoWantsImage = () => (biz.logo.type === "image" || biz.logo.type === "image+name") && biz.logo.src;
@@ -497,7 +517,7 @@ function footer(from) {
       <li><address>${addressLines().map(esc).join("<br>")}</address></li>
     </ul>${socialLinks("social social--footer")}</div>`,
     hours: `<div><h2 class="footer__h">Opening hours</h2>${hoursList()}</div>`,
-    services: `<div><h2 class="footer__h">${esc(C.catalogue.itemLabelPlural ? C.catalogue.itemLabelPlural[0].toUpperCase() + C.catalogue.itemLabelPlural.slice(1) : "Services")}</h2><ul>${C.catalogue.items.map((it) => `<li><a href="${attr(linkTo(from, "services"))}#${attr(it.id)}">${esc(it.name)}</a></li>`).join("")}</ul></div>`,
+    services: `<div><h2 class="footer__h">${esc(C.catalogue.itemLabelPlural ? C.catalogue.itemLabelPlural[0].toUpperCase() + C.catalogue.itemLabelPlural.slice(1) : "Services")}</h2><ul>${C.catalogue.items.map((it) => `<li><a href="${attr(it.page ? linkTo(from, it.page) : linkTo(from, "services") + "#" + it.id)}">${esc(it.name)}</a></li>`).join("")}</ul></div>`,
   };
   const year = new Date().getFullYear();
   return `
@@ -570,7 +590,7 @@ function pageSchema(key) {
       itemListElement: C.catalogue.items.map((it, i) => ({
         "@type": "ListItem",
         position: i + 1,
-        item: { "@type": "Service", name: it.name, description: it.summary, url: `${pageUrl("services")}#${it.id}`, provider: { "@id": `${origin}/#business` }, areaServed: biz.areaServed?.length ? biz.areaServed : undefined },
+        item: { "@type": "Service", name: it.name, description: it.summary, url: pageUrl(it.page || "services"), provider: { "@id": `${origin}/#business` }, areaServed: biz.areaServed?.length ? biz.areaServed : undefined },
       })),
     });
   }
@@ -596,7 +616,7 @@ function renderPage(key, extra = {}) {
   const canonical = pageUrl(key);
   const og = abs(C.site.ogImage);
   if (!hasFile(C.site.ogImage)) warn(`OG image not found: src/${C.site.ogImage}`);
-  const AUTO = new Set(["intro", "story", "catalogue", "catalogueDetail", "features", "testimonials", "missionVision", "values", "differentiators", "team", "process", "faq", "pricing"]);
+  const AUTO = new Set(["intro", "story", "catalogue", "catalogueDetail", "features", "testimonials", "missionVision", "values", "differentiators", "team", "process", "faq", "pricing", "servicePackages"]);
   let alt = false;
   const body = p.sections.map((s) => {
     if (!R[s.type]) throw new Error(`Unknown section type "${s.type}" on page "${key}"`);

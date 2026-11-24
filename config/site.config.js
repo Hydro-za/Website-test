@@ -285,7 +285,6 @@ module.exports = {
       sections: [
         { type: "pageHeader", eyebrow: "Our services", heading: "Digital services that move your business forward.", text: "Choose the support you need, or combine services to build a more consistent digital presence." },
         { type: "catalogueDetail" },
-        { type: "cataloguePackages" },
         {
           type: "process",
           eyebrow: "How we work",

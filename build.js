@@ -268,6 +268,7 @@ R.pricing = (s, from) => {
         .map(
           (t) => `
       <li class="tier${t.highlight ? " tier--highlight" : ""}"${reveal}>
+        ${t.highlight ? `<span class="tier__badge">Recommended</span>` : ""}
         <h3>${esc(t.name)}</h3>
         <p class="tier__price"><strong>${esc(t.price)}</strong> <span>${esc(t.unit || "")}</span></p>
         <ul class="ticks">${(t.features || []).map((f) => `<li>${icon("check", "icon icon--sm")}${esc(f)}</li>`).join("")}</ul>

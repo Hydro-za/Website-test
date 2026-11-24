@@ -210,7 +210,10 @@ R.catalogueDetail = (s, from) => `
           <p>${esc(it.description)}</p>
           ${it.benefits?.length ? `<ul class="ticks">${it.benefits.map((b) => `<li>${icon("check", "icon icon--sm")}${esc(b)}</li>`).join("")}</ul>` : ""}
           ${price}
-          <div class="btn-row"><a class="btn btn--primary" href="${attr(it.page ? linkTo(from, it.page) : linkTo(from, "contact", q))}">${esc(it.cta || "Enquire")}</a></div>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="${attr(linkTo(from, "contact", q))}">Discuss ${esc(it.name.toLowerCase())}</a>
+            ${it.page ? `<a class="btn btn--ghost" href="#package-${attr(it.id)}">View packages</a>` : ""}
+          </div>
         </div>
       </article>`;
         })
@@ -226,7 +229,7 @@ R.cataloguePackages = (s, from) => {
       const packages = packagePage?.sections?.find((section) => section.type === "servicePackages");
       if (!packages?.tiers?.length) return "";
       return `
-      <div class="catalogue-packages__group">
+      <div class="catalogue-packages__group" id="package-${attr(item.id)}">
         ${head(item.name, packages.heading, packages.intro)}
         <ul class="pricing">
           ${packages.tiers.map((tier) => {

@@ -290,6 +290,7 @@ R.servicePackages = (s, from) => `
         const query = `?enquiry=quote&service=${encodeURIComponent(s.serviceName)}&package=${encodeURIComponent(t.name)}`;
         return `
       <li class="tier${t.highlight ? " tier--highlight" : ""}"${reveal}>
+        ${t.highlight ? `<span class="tier__badge">Recommended</span>` : ""}
         <h3>${esc(t.name)}</h3>
         ${t.summary ? `<p class="tier__description">${esc(t.summary)}</p>` : ""}
         <p class="tier__price"><strong>${esc(t.price || "Price to be confirmed")}</strong></p>

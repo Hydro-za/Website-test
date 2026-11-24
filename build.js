@@ -130,6 +130,49 @@ R.marquee = (s) => `
   </div>
 </section>`;
 
+R.portfolioPreview = (s, from) => {
+  const visual = s.kind === "website" ? `
+    <div class="mock-browser mock-browser--site">
+      <div class="mock-browser__bar"><span></span><span></span><span></span><i>northstarstudio.co.za</i><b>↗</b></div>
+      <div class="mock-site">
+        <nav class="mock-site__nav"><strong>NORTHSTAR<span>.</span></strong><div>Home&nbsp;&nbsp; Services&nbsp;&nbsp; Projects&nbsp;&nbsp; About</div><b>GET IN TOUCH ↗</b></nav>
+        <div class="mock-site__hero"><div><small>BUILT AROUND YOUR BUSINESS</small><h3>Make room<br>for <em>what's next.</em></h3><p>Thoughtful spaces. Considered details. Work that lasts.</p><button>Explore our work&nbsp; ↗</button></div><div class="mock-site__photo"><div class="mock-site__sun"></div><div class="mock-site__building"></div><div class="mock-site__plant">✳</div></div></div>
+        <div class="mock-site__strip"><span>01 / STRATEGY</span><span>02 / DESIGN</span><span>03 / DELIVERY</span><strong>Designed to move you forward ↗</strong></div>
+      </div>
+    </div>` : s.kind === "store" ? `
+    <div class="mock-browser mock-browser--store">
+      <div class="mock-browser__bar"><span></span><span></span><span></span><i>formandfield.store</i><b>↗</b></div>
+      <div class="mock-store">
+        <div class="mock-store__announce">COMPLIMENTARY DELIVERY ON ORDERS OVER R850</div>
+        <nav><strong>FORM & FIELD</strong><div>Shop&nbsp;&nbsp; New arrivals&nbsp;&nbsp; Our story</div><b>⌕ &nbsp; ♡ &nbsp; BAG (2)</b></nav>
+        <div class="mock-store__heading"><small>OBJECTS FOR EVERYDAY LIVING</small><h3>Good things,<br><em>made to stay.</em></h3><p>Considered essentials for slower, better living.</p></div>
+        <div class="mock-products">
+          <div><div class="mock-product mock-product--one"><span>01</span><i></i></div><b>Arc ceramic vase</b><small>R 690</small></div>
+          <div><div class="mock-product mock-product--two"><span>02</span><i></i></div><b>Everyday carry tote</b><small>R 420</small></div>
+          <div><div class="mock-product mock-product--three"><span>03</span><i></i></div><b>Studio table lamp</b><small>R 1,250</small></div>
+        </div>
+      </div>
+    </div>` : `
+    <div class="mock-app">
+      <aside class="mock-app__side"><strong><span>F</span> FLOWOPS</strong><small>WORKSPACE</small><b>▦ &nbsp; Overview</b><span>▤ &nbsp; Jobs</span><span>♙ &nbsp; Customers</span><span>▧ &nbsp; Inventory</span><span>▥ &nbsp; Reports</span><div class="mock-app__user"><i>JD</i><span>Jordan Davis<small>Administrator</small></span></div></aside>
+      <div class="mock-app__main"><header><span>Workspace / Overview</span><b>⌕ &nbsp; Search&nbsp;&nbsp;&nbsp; ◉</b></header><div class="mock-app__title"><div><small>MONDAY, 24 NOVEMBER</small><h3>Good morning, Jordan</h3><p>Here's what's happening with your business today.</p></div><button>＋ New job</button></div>
+        <div class="mock-stats"><div><small>ACTIVE JOBS</small><b>24</b><i>↑ 12% this month</i></div><div><small>AWAITING APPROVAL</small><b>08</b><i>Needs attention</i></div><div><small>MONTHLY REVENUE</small><b>R84,250</b><i>↑ 8.4% this month</i></div></div>
+        <div class="mock-app__lower"><div class="mock-table"><b>Recent jobs</b><small>View all →</small><div class="mock-table__row mock-table__head"><span>JOB</span><span>CUSTOMER</span><span>STATUS</span></div><div class="mock-table__row"><b>#1048</b><span>Oak & Co.</span><em>In progress</em></div><div class="mock-table__row"><b>#1047</b><span>Studio Nine</span><em>Awaiting</em></div><div class="mock-table__row"><b>#1046</b><span>Harbour Group</span><em>Complete</em></div></div><div class="mock-chart"><b>Work overview</b><div class="mock-bars"><i style="height:38%"></i><i style="height:62%"></i><i style="height:48%"></i><i style="height:78%"></i><i style="height:58%"></i><i style="height:92%"></i><i style="height:70%"></i></div><small>THIS WEEK</small></div></div>
+      </div>
+    </div>`;
+  return `
+<section class="section portfolio-project portfolio-project--${attr(s.kind)}">
+  <div class="container portfolio-project__grid">
+    <div class="portfolio-project__copy" data-reveal>
+      <p class="eyebrow">${esc(s.eyebrow)}</p><h2>${esc(s.heading)}</h2><p>${esc(s.text)}</p>
+      <div class="portfolio-project__meta"><span>CONCEPT PROJECT</span><span>RESPONSIVE DESIGN</span></div>
+      <a class="btn btn--primary" href="${attr(linkTo(from,"contact",s.query || "?enquiry=quote"))}">${esc(s.button || "Discuss a similar project")} ${icon("arrow","icon icon--sm")}</a>
+    </div>
+    <div class="portfolio-project__visual" data-reveal>${visual}<p class="portfolio-project__caption">Design concept · Illustrative interface preview</p></div>
+  </div>
+</section>`;
+};
+
 R.pageHeader = (s, from) => `
 <section class="page-header">
   <div class="container">

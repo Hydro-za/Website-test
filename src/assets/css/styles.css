@@ -477,3 +477,18 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
 .next-steps { counter-reset: step; display: grid; gap: .9rem; margin: .9rem 0 0; }
 .next-steps li { counter-increment: step; position: relative; padding-left: 2.6rem; color: var(--c-muted); font-size: .98rem; line-height: 1.5; }
 .next-steps li::before { content: counter(step); position: absolute; left: 0; top: -.05rem; display: grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: color-mix(in srgb, var(--c-primary) 12%, transparent); color: var(--c-primary); font-weight: 700; font-size: .85rem; }
+
+
+/* Package cards displayed directly beneath each service on the Services page */
+.catalogue-packages__group + .catalogue-packages__group {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--c-line);
+}
+.catalogue-packages .pricing { align-items: stretch; }
+.catalogue-packages .tier { min-width: 0; }
+.catalogue-packages .tier .btn { align-self: flex-start; }
+@media (max-width: 560px) {
+  .catalogue-packages .tier { padding: 1.5rem; }
+  .catalogue-packages .tier .btn { width: 100%; justify-content: center; }
+}

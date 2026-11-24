@@ -236,6 +236,7 @@ R.cataloguePackages = (s, from) => {
             const query = `?enquiry=quote&service=${encodeURIComponent(packages.serviceName)}&package=${encodeURIComponent(tier.name)}`;
             return `
           <li class="tier${tier.highlight ? " tier--highlight" : ""}"${reveal}>
+            ${tier.highlight ? `<span class="tier__badge">Recommended</span>` : ""}
             <h3>${esc(tier.name)}</h3>
             ${tier.summary ? `<p class="tier__description">${esc(tier.summary)}</p>` : ""}
             <p class="tier__price"><strong>${esc(tier.price || "Price to be confirmed")}</strong></p>

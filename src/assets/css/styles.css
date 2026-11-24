@@ -492,3 +492,24 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
   .catalogue-packages .tier { padding: 1.5rem; }
   .catalogue-packages .tier .btn { width: 100%; justify-content: center; }
 }
+
+
+/* Recommended package label */
+.tier__badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 .85rem;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  background: var(--c-primary);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 750;
+  letter-spacing: .06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.tier--highlight .tier__badge {
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}

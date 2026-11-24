@@ -212,7 +212,7 @@ R.catalogueDetail = (s, from) => `
           ${price}
           <div class="btn-row">
             <a class="btn btn--primary" href="${attr(linkTo(from, "contact", q))}">Discuss ${esc(it.name.toLowerCase())}</a>
-            ${it.page ? `<a class="btn btn--ghost" href="#package-${attr(it.id)}">View packages</a>` : ""}
+            ${it.page ? `<a class="btn btn--ghost" href="${attr(linkTo(from, it.page))}">View packages</a>` : ""}
           </div>
         </div>
       </article>`;

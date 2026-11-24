@@ -209,6 +209,7 @@ address { font-style: normal; }
 .tier--highlight { border-color: var(--c-primary); box-shadow: inset 0 3px 0 var(--c-primary); }
 .tier__price strong { font-family: var(--f-heading); font-size: 2rem; font-weight: 800; letter-spacing: -.03em; }
 .tier__price span { color: var(--c-muted); }
+.tier__description { color: var(--c-muted); min-height: 3.5em; }
 .tier .ticks { flex: 1; margin-bottom: 1.5rem; }
 
 /* ---------- CTA band ---------- */

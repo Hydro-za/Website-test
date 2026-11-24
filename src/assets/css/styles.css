@@ -1016,3 +1016,35 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
   .portfolio-project--system .mock-app__side > span { font-size:6px; padding:5px 2px; }
   .portfolio-project--system .mock-app__main { padding-inline:7px; }
 }
+
+/* Touch devices: avoid sticky :hover states that can make the first tap
+   appear to do nothing on iOS Safari. Keep hover feedback for real pointers. */
+@media (hover: none), (pointer: coarse) {
+  .btn--primary:hover {
+    background: var(--c-primary);
+    color: var(--c-on-primary);
+    transform: none;
+    box-shadow: none;
+  }
+  .btn--ghost:hover {
+    background: transparent;
+    color: var(--c-ink);
+    transform: none;
+  }
+  .btn--light:hover {
+    background: #fff;
+    color: var(--c-ink);
+    transform: none;
+  }
+  .btn--outline-light:hover {
+    background: transparent;
+    color: #fff;
+  }
+  .btn--whatsapp:hover {
+    background: #128c4a;
+    color: #fff;
+  }
+  .arrow-link:hover .icon { transform: none; }
+  .site-nav a:not(.btn):hover::after { transform: scaleX(0); }
+  .site-footer li a:hover { opacity: 1; }
+}

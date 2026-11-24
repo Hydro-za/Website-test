@@ -74,14 +74,25 @@
   try {
     var params = new URLSearchParams(window.location.search);
     var typeSel = form.elements.enquiryType;
-    if (params.get("enquiry") === "quote" && data.quoteType) {
+    var svc = params.get("service");
+    var pkg = params.get("package");
+    var desiredType = data.quoteType;
+    if (svc) {
+      var serviceName = svc.toLowerCase();
+      if (serviceName.indexOf("ecommerce") !== -1 || serviceName.indexOf("e-commerce") !== -1) desiredType = "Ecommerce websites";
+      else if (serviceName.indexOf("business systems") !== -1) desiredType = "Custom business systems";
+      else if (serviceName.indexOf("website") !== -1) desiredType = "Website design";
+    }
+    if (params.get("enquiry") === "quote" && desiredType) {
       for (var i = 0; i < typeSel.options.length; i++) {
-        if (typeSel.options[i].value === data.quoteType) typeSel.selectedIndex = i;
+        if (typeSel.options[i].value === desiredType) typeSel.selectedIndex = i;
       }
     }
-    var svc = params.get("service");
-    if (svc && !form.elements.message.value) {
-      form.elements.message.value = "I'm interested in: " + svc.slice(0, 120) + "\n\n";
+    if ((svc || pkg) && !form.elements.message.value) {
+      var enquiryLines = [];
+      if (svc) enquiryLines.push("I'm interested in: " + svc.slice(0, 120));
+      if (pkg) enquiryLines.push("Package: " + pkg.slice(0, 120));
+      form.elements.message.value = enquiryLines.join("\n") + "\n\n";
     }
   } catch (e) { /* non-critical */ }
 

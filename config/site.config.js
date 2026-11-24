@@ -126,6 +126,7 @@ module.exports = {
         description: "From a clear landing page to a multi-page business website, we create considered digital experiences that communicate your offer, work smoothly on mobile and make it easy for customers to contact you.",
         benefits: ["Responsive mobile-first layouts", "Clear calls to action and enquiry paths", "Search-friendly page structure"],
         price: null,
+        page: "website-design",
         cta: "Discuss a website",
         featured: true,
         image: { src: "assets/img/illustration-website.svg", alt: "Illustrated website layout and interface diagram" },
@@ -138,6 +139,7 @@ module.exports = {
         description: "We design and develop tailored business systems around the way your company works. From internal dashboards and job management platforms to quotation, invoicing and employee workflows, each system is planned around your real processes rather than forcing your business into generic software.",
         benefits: ["Custom dashboards and business management tools", "Job, project, employee and task management", "Quotation, invoicing and workflow solutions"],
         price: null,
+        page: "custom-business-systems",
         cta: "Discuss a business system",
         featured: true,
         image: { src: "assets/img/illustration-systems.svg", alt: "Illustrated custom business dashboard with metrics, a chart and a task list" },
@@ -150,6 +152,7 @@ module.exports = {
         description: "We create ecommerce websites with clear product layouts, simple navigation and a smooth shopping experience across mobile and desktop. Your store is structured around your products, customers and the way you want to sell online.",
         benefits: ["Product pages and organised categories", "Mobile-friendly shopping experience", "Cart, checkout and essential store pages"],
         price: null,
+        page: "ecommerce-websites",
         cta: "Discuss an online store",
         featured: true,
         image: { src: "assets/img/illustration-store.svg", alt: "Illustrated online store with product cards and a shopping cart", width: 800, height: 620 },
@@ -313,6 +316,51 @@ module.exports = {
           text: "Tell us what you are trying to achieve and we'll help you work out the right starting point.",
           primaryCta: { label: "Discuss your project", page: "contact", query: "?enquiry=quote" },
         },
+      ],
+    },
+
+    "website-design": {
+      label: "Website Design Packages",
+      slug: "website-design",
+      seo: { title: "Website Design Packages", description: "Explore Flowline Studio website design packages, from focused landing pages to complete business websites.", keywords: ["website design packages", "business website design", "landing page design South Africa"] },
+      sections: [
+        { type: "pageHeader", eyebrow: "Website design & development", heading: "A website built around your business.", text: "Choose a starting point for your website. Every project is scoped around your content, goals and the features your business needs." },
+        { type: "servicePackages", serviceName: "Website Design & Development", heading: "Website design packages", intro: "Clear starting points for businesses that need a professional online presence. Final scope and pricing are confirmed after discussing your project.", tiers: [
+          { name: "Landing Page", price: "Price to be confirmed", summary: "A focused single-page website that introduces your business and guides visitors towards an enquiry.", features: ["Custom single-page layout", "Mobile-responsive design", "Clear contact and enquiry calls to action", "Basic on-page SEO"] },
+          { name: "Business Website", price: "Price to be confirmed", highlight: true, summary: "A complete multi-page website that explains your business, services and how customers can get in touch.", features: ["Home, About, Services and Contact pages", "Custom responsive design", "Contact form setup", "Basic on-page SEO"] },
+          { name: "Premium Website", price: "Price to be confirmed", summary: "A more tailored website for businesses that need additional pages, refined visuals or custom functionality.", features: ["Expanded page structure", "Premium visual design and motion", "Additional functionality scoped to your brief", "SEO-ready page structure"] },
+        ] },
+        { type: "cta", heading: "Let's plan your website.", text: "Tell us what your business needs and we'll help define the right scope before quoting.", primaryCta: { label: "Discuss a website", page: "contact", query: "?enquiry=quote&service=Website%20Design%20%26%20Development" }, secondaryCta: { label: "View all services", page: "services" } },
+      ],
+    },
+
+    "ecommerce-websites": {
+      label: "E-commerce Packages",
+      slug: "ecommerce-websites",
+      seo: { title: "E-commerce Website Packages", description: "Explore Flowline Studio ecommerce website packages for businesses ready to sell products online.", keywords: ["ecommerce website packages", "online store development", "ecommerce website South Africa"] },
+      sections: [
+        { type: "pageHeader", eyebrow: "E-commerce website development", heading: "Turn your products into an online store.", text: "From a straightforward online shop to a more advanced ecommerce experience, choose a starting point that fits how your business sells." },
+        { type: "servicePackages", serviceName: "E-commerce Website Development", heading: "E-commerce packages", intro: "Each store is planned around your products, catalogue, payment requirements and order process. Platform and third-party fees are quoted separately.", tiers: [
+          { name: "Starter Store", price: "Price to be confirmed", summary: "A clean online store for businesses starting to sell products online.", features: ["Storefront and product pages", "Product categories", "Shopping cart and checkout setup", "Mobile-responsive design"] },
+          { name: "Professional Store", price: "Price to be confirmed", highlight: true, summary: "A more complete store with a tailored shopping experience and essential store management features.", features: ["Customised storefront design", "Expanded product catalogue structure", "Payment-provider integration setup", "Order and product management setup"] },
+          { name: "Advanced Store", price: "Price to be confirmed", summary: "A tailored ecommerce build for businesses with more complex selling requirements.", features: ["Advanced storefront experience", "Custom store functionality", "Additional integrations where required", "Expanded shopping and checkout workflows"] },
+        ] },
+        { type: "cta", heading: "Ready to sell online?", text: "Tell us about your products and how you want your store to work. We'll help scope the right solution.", primaryCta: { label: "Discuss an online store", page: "contact", query: "?enquiry=quote&service=E-commerce%20Website%20Development" }, secondaryCta: { label: "View all services", page: "services" } },
+      ],
+    },
+
+    "custom-business-systems": {
+      label: "Business System Packages",
+      slug: "custom-business-systems",
+      seo: { title: "Custom Business System Packages", description: "Explore Flowline Studio custom business systems for managing jobs, teams, workflows and business operations.", keywords: ["custom business systems", "business management software", "custom workflow systems South Africa"] },
+      sections: [
+        { type: "pageHeader", eyebrow: "Custom business systems", heading: "Software shaped around the way you work.", text: "Replace disconnected processes with a system designed around your operations, your team and the way your business runs." },
+        { type: "servicePackages", serviceName: "Custom Business Systems", heading: "Business system packages", intro: "These are project starting points rather than fixed software products. Features, integrations and delivery scope are confirmed after a discovery discussion.", tiers: [
+          { name: "Essential System", price: "Price to be confirmed", summary: "A focused internal tool for organising one important business process.", features: ["Purpose-built dashboard", "Core records and data management", "User sign-in where required", "Responsive interface"] },
+          { name: "Business Operations", price: "Price to be confirmed", highlight: true, summary: "A connected system for managing multiple everyday business workflows.", features: ["Custom operational dashboard", "Workflow and task management", "Role-based access where required", "Database and reporting features"] },
+          { name: "Advanced Platform", price: "Custom scope", summary: "A larger tailored platform for businesses with complex processes or integration needs.", features: ["Multiple connected modules", "Advanced roles and permissions", "Custom integrations where required", "Bespoke workflows and reporting"] },
+        ] },
+        { type: "cta", heading: "Let's map out your system.", text: "Explain the process you want to improve and we'll discuss what a practical custom solution could include.", primaryCta: { label: "Discuss a business system", page: "contact", query: "?enquiry=quote&service=Custom%20Business%20Systems" }, secondaryCta: { label: "View all services", page: "services" } },
       ],
     },
 

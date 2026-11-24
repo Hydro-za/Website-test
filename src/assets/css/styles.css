@@ -951,3 +951,68 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
   .portfolio-project--system .mock-app__title h3 { font-size:14px; }
   .portfolio-project--system .mock-app__title button { padding:7px; }
 }
+
+
+/* Compact mobile business-system preview: show every navigation item without scrolling */
+@media (max-width:560px) {
+  .portfolio-project--system .portfolio-project__visual { padding:7px; }
+  .portfolio-project--system .mock-app { border-radius:8px; }
+  .portfolio-project--system .mock-app__side {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    align-items:center;
+    gap:4px;
+    padding:7px 8px;
+    overflow:visible;
+    white-space:normal;
+  }
+  .portfolio-project--system .mock-app__side strong {
+    flex:0 0 100%;
+    display:flex;
+    align-items:center;
+    margin:0 0 2px;
+    font-size:9px;
+  }
+  .portfolio-project--system .mock-app__side strong span {
+    width:19px;
+    height:19px;
+    margin-right:6px;
+    font-size:9px;
+  }
+  .portfolio-project--system .mock-app__side > b,
+  .portfolio-project--system .mock-app__side > span {
+    flex:1 1 calc(33.333% - 4px);
+    min-width:0;
+    margin:0;
+    padding:5px 3px;
+    border-radius:4px;
+    text-align:center;
+    font-size:7px;
+    line-height:1.2;
+  }
+  .portfolio-project--system .mock-app__main { padding:0 9px 9px; }
+  .portfolio-project--system .mock-app__main header { min-height:30px; padding:7px 0; font-size:6px; }
+  .portfolio-project--system .mock-app__title { padding:10px 0 8px; }
+  .portfolio-project--system .mock-app__title h3 { font-size:13px; }
+  .portfolio-project--system .mock-app__title p { font-size:6px; }
+  .portfolio-project--system .mock-app__title small { font-size:6px; }
+  .portfolio-project--system .mock-app__title button { padding:6px 7px; font-size:6px; }
+  .portfolio-project--system .mock-stats { gap:5px; }
+  .portfolio-project--system .mock-stats > div { padding:7px; }
+  .portfolio-project--system .mock-stats small { font-size:6px; }
+  .portfolio-project--system .mock-stats b { margin:3px 0; font-size:14px; }
+  .portfolio-project--system .mock-stats i { font-size:6px; }
+  .portfolio-project--system .mock-app__lower { gap:6px; margin-top:7px; }
+  .portfolio-project--system .mock-table,
+  .portfolio-project--system .mock-chart { padding:8px; }
+  .portfolio-project--system .mock-table__row { padding:6px 0; font-size:7px; }
+  .portfolio-project--system .mock-chart { min-height:105px; }
+  .portfolio-project--system .mock-bars { min-height:62px; margin:6px 0 4px; }
+}
+@media (max-width:380px) {
+  .portfolio-project--system .mock-app__side > b,
+  .portfolio-project--system .mock-app__side > span { font-size:6px; padding:5px 2px; }
+  .portfolio-project--system .mock-app__main { padding-inline:7px; }
+}

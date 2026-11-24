@@ -1084,9 +1084,10 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
     border-radius:10px;
   }
   .js .site-nav .nav-services__submenu li { border:0; }
+  .js .site-nav .nav-services__submenu li + li { border-top:1px solid var(--c-line); }
   .js .site-nav .nav-services__submenu a {
     display:flex; align-items:center; min-height:2.75rem;
-    padding:.65rem .8rem !important; font-size:.95rem !important;
+    padding:.8rem .8rem !important; font-size:.95rem !important;
     font-weight:500; color:var(--c-muted);
     border-radius:7px; border:0; text-decoration:none;
   }

@@ -28,8 +28,8 @@ module.exports = {
     url: "https://flowlinestudio.co.za",
     language: "en",
     locale: "en_ZA",
-    // Keep noindex until the live domain and all content are verified.
-    indexable: false,
+    // The live domain and public pages have been verified.
+    indexable: true,
     outputDir: "dist",
     ogImage: "assets/img/og-default.png",
     titleSeparator: " | ",

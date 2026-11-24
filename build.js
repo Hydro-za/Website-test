@@ -219,6 +219,39 @@ R.catalogueDetail = (s, from) => `
   </div>
 </section>`;
 
+R.cataloguePackages = (s, from) => {
+  const groups = C.catalogue.items
+    .map((item) => {
+      const packagePage = pages[item.page];
+      const packages = packagePage?.sections?.find((section) => section.type === "servicePackages");
+      if (!packages?.tiers?.length) return "";
+      return `
+      <div class="catalogue-packages__group">
+        ${head(item.name, packages.heading, packages.intro)}
+        <ul class="pricing">
+          ${packages.tiers.map((tier) => {
+            const query = `?enquiry=quote&service=${encodeURIComponent(packages.serviceName)}&package=${encodeURIComponent(tier.name)}`;
+            return `
+          <li class="tier${tier.highlight ? " tier--highlight" : ""}"${reveal}>
+            <h3>${esc(tier.name)}</h3>
+            ${tier.summary ? `<p class="tier__description">${esc(tier.summary)}</p>` : ""}
+            <p class="tier__price"><strong>${esc(tier.price || "Price to be confirmed")}</strong></p>
+            <ul class="ticks">${(tier.features || []).map((feature) => `<li>${icon("check", "icon icon--sm")}${esc(feature)}</li>`).join("")}</ul>
+            <a class="btn ${tier.highlight ? "btn--primary" : "btn--ghost"}" href="${attr(linkTo(from, "contact", query))}">Discuss this package</a>
+          </li>`;
+          }).join("")}
+        </ul>
+      </div>`;
+    })
+    .join("");
+  return `
+<section class="section catalogue-packages">
+  <div class="container">
+    ${groups}
+  </div>
+</section>`;
+};
+
 R.pricing = (s, from) => {
   const p = C.catalogue.pricing;
   if (!p || !p.tiers?.length) return "";
@@ -616,7 +649,7 @@ function renderPage(key, extra = {}) {
   const canonical = pageUrl(key);
   const og = abs(C.site.ogImage);
   if (!hasFile(C.site.ogImage)) warn(`OG image not found: src/${C.site.ogImage}`);
-  const AUTO = new Set(["intro", "story", "catalogue", "catalogueDetail", "features", "testimonials", "missionVision", "values", "differentiators", "team", "process", "faq", "pricing", "servicePackages"]);
+  const AUTO = new Set(["intro", "story", "catalogue", "catalogueDetail", "cataloguePackages", "features", "testimonials", "missionVision", "values", "differentiators", "team", "process", "faq", "pricing", "servicePackages"]);
   let alt = false;
   const body = p.sections.map((s) => {
     if (!R[s.type]) throw new Error(`Unknown section type "${s.type}" on page "${key}"`);

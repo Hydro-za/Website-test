@@ -40,6 +40,31 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  /* ---------- Mobile service package dropdown ---------- */
+  var serviceToggle = document.querySelector(".nav-services__toggle");
+  var serviceSubmenu = document.getElementById("nav-services-submenu");
+  if (serviceToggle && serviceSubmenu) {
+    serviceToggle.addEventListener("click", function () {
+      var expanded = serviceToggle.getAttribute("aria-expanded") !== "true";
+      serviceToggle.setAttribute("aria-expanded", String(expanded));
+      serviceSubmenu.hidden = !expanded;
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && serviceToggle.getAttribute("aria-expanded") === "true") {
+        serviceToggle.setAttribute("aria-expanded", "false");
+        serviceSubmenu.hidden = true;
+        serviceToggle.focus();
+      }
+    });
+    var serviceNav = document.getElementById("site-nav");
+    if (serviceNav) serviceNav.addEventListener("click", function (e) {
+      if (e.target.closest(".nav-services__submenu a")) {
+        serviceToggle.setAttribute("aria-expanded", "false");
+        serviceSubmenu.hidden = true;
+      }
+    });
+  }
+
   /* ---------- Scroll reveal ---------- */
   var items = document.querySelectorAll("[data-reveal]");
   if (items.length) {

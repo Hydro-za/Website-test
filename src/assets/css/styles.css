@@ -1017,6 +1017,37 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
   .portfolio-project--system .mock-app__main { padding-inline:7px; }
 }
 
+/* Mobile tap reliability: prevent double-tap zoom delays and sticky hover states. */
+@media (hover: none), (pointer: coarse) {
+  a, button, summary, [role="button"], input, select, textarea {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a:hover { color: inherit; }
+  .brand:hover { color: var(--c-ink); }
+  .site-nav a:not(.btn):hover { color: var(--c-ink); }
+  .btn--primary:hover { background:var(--c-primary); color:var(--c-on-primary); transform:none; box-shadow:none; }
+  .btn--ghost:hover { background:transparent; color:var(--c-ink); transform:none; }
+  .btn--light:hover { background:#fff; color:var(--c-ink); transform:none; }
+  .btn--outline-light:hover { background:transparent; color:#fff; }
+  .btn--whatsapp:hover { background:#128c4a; color:#fff; }
+  .arrow-link:hover .icon { transform:none; }
+  .site-nav a:not(.btn):hover::after { transform:scaleX(0); }
+  .site-footer a:hover, .site-footer li a:hover { color:inherit; opacity:1; }
+  .topbar a:hover { color:#fff; text-decoration:none; }
+  .wa-float:hover { background:#128c4a; color:#fff; transform:none; }
+  .social a:hover, .social--footer a:hover { background:transparent; color:inherit; border-color:var(--c-line); }
+  .card:hover { background:var(--c-bg); box-shadow:none; }
+  .card:hover::before { transform:scaleX(0); }
+  .card:hover .icon--lg { background:color-mix(in srgb, var(--c-primary) 10%, transparent); color:var(--c-primary); transform:none; }
+  .faq__item summary:hover { color:inherit; }
+  .detail:hover .detail__media img, .split:hover .split__media img { transform:none; }
+  .steps li:hover { transform:none; }
+  .features li:hover::before { width:3rem; }
+  .numbered li:hover { border-top-color:var(--c-line); }
+  .portfolio-project__visual:hover { transform:none; box-shadow:none; }
+}
+
 /* Touch devices: avoid sticky :hover states that can make the first tap
    appear to do nothing on iOS Safari. Keep hover feedback for real pointers. */
 @media (hover: none), (pointer: coarse) {

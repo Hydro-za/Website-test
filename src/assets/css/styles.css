@@ -1127,3 +1127,13 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--c
     color:var(--c-primary); background:rgba(37,99,235,.08);
   }
 }
+
+
+/* Desktop navigation: Services remains a normal link. The package dropdown is mobile-only. */
+@media (min-width:861px) {
+  .site-nav .nav-services__toggle { display:none !important; }
+  .site-nav .nav-services__submenu,
+  .site-nav .nav-services__submenu[hidden],
+  .site-nav .nav-services__submenu:not([hidden]) { display:none !important; }
+  .site-nav .nav-services__top { display:block; }
+}
